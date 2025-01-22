@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function() {
     let didClick = false; // Tracks if the button has already been clicked
 
     /**
@@ -74,5 +74,3 @@ document.addEventListener('DOMContentLoaded', function() {
         subtree: true
     });
 });
-
-

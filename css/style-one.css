@@ -457,12 +457,12 @@ textarea#input_1_6 {
 .woocommerce-variation-price {
     top: 60px;
 }
-/* .woocommerce div.product div.images img {
+.woocommerce div.product div.images img {
     padding: 5px 90px !important;
-} */
-.only_pc{
-		display:none !important;
 }
+	.only_pc{
+		display:none !important;
+	}
 .only_mobile{
 	display:block !important;
 }
@@ -489,10 +489,10 @@ textarea#input_1_6 {
     font-family: "Open Sans", Sans-serif;
     font-size: 16px;
 }
-/* #single-product-info-background {
+#single-product-info-background {
     background: #fff;
     padding-bottom: 0px;
-} */
+}
 .single-product #content-pro {
     padding-top: 90px;
 }
@@ -1104,11 +1104,10 @@ body #logo-pro img {
 
 @media screen and (min-width: 768px) {
     .other-product h3 {
-        font-size: 20px !important;
-        font-weight: 500 !important;
-		line-height:28px;
-        color: #0F0F10;
-        margin-bottom: 5px;
+        font-size: 22px !important;
+        font-weight: 600 !important;
+        min-height: 120px !important;
+			line-height:30.8px;
     }
 }
 @media only screen and (min-width: 481px) and (max-width: 767px) {
@@ -1537,4 +1536,10 @@ body:not(.rtl) .elementor-7074 .elementor-element.elementor-element-cae9837 {
 }
 .wc-block-components-totals-coupon.wc-block-components-panel {
     padding-top: 10px;
+}
+.woocommerce-checkout .wc-block-components-form .wc-block-components-text-input label, .woocommerce-checkout .wc-block-components-text-input label{
+   font-size: 1em !important;
+}
+.wc-block-checkout__add-note .wc-block-components-textarea{
+    color:#000000 !important;
 }
