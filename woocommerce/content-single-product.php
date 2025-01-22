@@ -992,7 +992,6 @@ if ( ! empty ( $table ) ) {
     </div>
 </div>
 
-
 <div class="section-6 pb-5">
     <div class="container">
         <div class="mtb-50">
@@ -1024,6 +1023,7 @@ if ( ! empty ( $table ) ) {
                       $pro_image = get_template_directory_uri().'/assets/images/no-image-icon.png';
                   } 
                   ?>
+
             <div class="item">
                 <div class="box-shadow">
                     <div class="other-product">

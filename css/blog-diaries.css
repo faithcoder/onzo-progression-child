@@ -362,9 +362,9 @@ p.comment-notes{
 .toborlife-news-comments-section .comment-form input[type="text"],
 .toborlife-news-comments-section .comment-form input[type="email"] {
     width: 100%;
-    padding: 3px !important;
-    border: 1px solid #000 !important;
-    border-radius: 0 !important;
+    padding: 7px 10px !important;
+    border: 1px solid #dadada !important;
+    border-radius: 5px !important;
 }
 .form-submit > input[type=submit]{
     background-color: #506CCD !important;
@@ -375,4 +375,12 @@ p.comment-notes{
 
 .toborlife-news-post-excerpt a {
     color: #506ccd !important;
+}
+
+#respond input[type=checkbox] {
+    margin-right: 0px;
+}
+
+.comment-form input#submit:hover {
+    background-color: #475FB3 !important;
 }
