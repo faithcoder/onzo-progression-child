@@ -21,7 +21,7 @@ function onzo_progression_child_enqueue_styles() {
 
     // Additional CSS Files
     wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap', [], null);
-    wp_enqueue_style('go2-product-page', get_stylesheet_directory_uri() . '/css/product-page.css', array('parent-style') );
+    
     wp_enqueue_style('blog-diaries', get_stylesheet_directory_uri() . '/css/blog-diaries.css', array('parent-style') );
 }
 
