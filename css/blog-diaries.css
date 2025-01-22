@@ -1,0 +1,386 @@
+.toborlife-news-blog {
+    background: #fff;
+}
+.toborlife-news-blog ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.toborlife-news-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 30px;
+}
+
+.toborlife-news-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.toborlife-news-content {
+    flex: 0 0 65%;
+    max-width: 65%;
+}
+
+.toborlife-news-sidebar {
+    flex: 0 0 30%;
+    max-width: 30%;
+}
+
+.toborlife-news-post {
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px -1px #0000001a, 0 2px 4px -2px #0000001a;
+    padding-bottom: 20px;
+    border-radius: 5px;
+}
+.toborlife-news-post-details {
+    padding: 0 20px;
+}
+.toborlife-news-post-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.toborlife-news-post-title, .toborlife-news-post-title > a {
+    font-size: 20px;
+    margin: 10px 0;
+    font-family: Inter;
+    font-weight: 700;
+    color: #000;
+    display: block;
+}
+.toborlife-news-post-title:hover a{
+    color: #506CCD !important;
+}
+
+.toborlife-news-post-meta,
+.toborlife-news-post-meta a {
+    font-size: 12px;
+    color: #000;
+    font-weight: 400;
+    font-family: Inter;
+}
+.toborlife-news-post-excerpt {
+    font-size: 14px;
+    color: #000;
+    font-weight: 400;
+    font-family: Inter;
+    margin: 20px 0;
+}
+.toborlife-news-read-more {
+    font-size: 12px;
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+    text-transform: uppercase;
+    display: block;
+}
+.toborlife-news-read-more:hover {
+    color: #506CCD;
+}
+.toborlife-news-read-more::after{
+    content: ""; 
+    display: inline-block; 
+    width: 11px; 
+    height: 11px; 
+    background-image: url('/dev/wp-content/themes/onzo-progression-child/images/arrow-right.png'); 
+    background-position: center center; 
+    background-repeat: no-repeat; 
+    vertical-align: middle; 
+    position: relative;
+    top:-1px;
+}
+.toborlife-news-pagination ul {
+    display: flex;
+    list-style: none;
+    gap: 7px;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.toborlife-news-pagination li {
+    display: inline-block;
+}
+
+.toborlife-news-pagination li a.next::after{
+    content: ""; 
+    display: inline-block; 
+    width: 15px; 
+    height: 15px; 
+    background-image: url('/wp-content/themes/onzo-progression/images/arrow-right.png'); 
+    background-position: center center; 
+    background-repeat: no-repeat; 
+    vertical-align: middle; 
+}
+.toborlife-news-pagination li a.next{
+    padding: 12px 15px;
+}
+
+.toborlife-news-pagination a,
+.toborlife-news-pagination span {
+    border: 1px solid #000;
+    text-decoration: none;
+    color: #000;
+    border-radius: 5px;
+    padding: 12px 20px;
+}
+.toborlife-news-pagination li{
+    font-size: 12px;
+    font-weight: 500;
+    font-family: Helvetica, sans-serif;
+}
+.toborlife-news-pagination li a:hover {
+    color: #506CCD;
+}
+.toborlife-news-pagination .current {
+    background: #506CCD;
+    color: #fff;
+    margin: 0;
+    padding: 16px 20px;
+}
+/* Sidebar */
+.toborlife-news-sidebar-section {
+    margin-bottom: 30px;
+}
+
+.toborlife-news-sidebar-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-family: 'Inter';
+    font-weight: 700;
+}
+
+.toborlife-news-search-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 50px;
+    background: #EBEAEA;
+}
+
+.toborlife-news-recent-item,
+.toborlife-news-archive-list li {
+    margin-bottom: 10px;
+}
+
+.toborlife-news-post-icon {
+    margin-right: 5px;
+    color: #0073aa;
+}
+
+.toborlife-news-post-date {
+    display: block;
+    font-size: 12px;
+    color: #999;
+}
+
+.toborlife-news-archive-icon {
+    margin-right: 5px;
+    color: #0073aa;
+}
+
+
+.toborlife-news-search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.toborlife-news-search-input {
+    width: 100%;
+    padding-left: 40px; 
+    height: 30px;
+    font-size: 14px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 50px;
+    background: #EBEAEA;
+}
+
+.toborlife-news-search-icon {
+    position: absolute;
+    left: 15px;
+    width: 20px;
+    height: 20px;
+    background-image: url(/dev/wp-content/themes/onzo-progression-child/images/search-icon.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    top: 16px;
+}
+.toborlife-news-search-input::placeholder, .toborlife-news-search-input[placeholder] {
+    color: #828080 !important;
+}
+
+.toborlife-news-recent-single{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    font-family: Inter;
+    margin: 5px 0;
+}
+h6.toborlife-news-recent-title{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 3px;
+}
+.toborlife-news-post-icon > img {
+    width: 12px;
+    height: 12px;
+    position: relative;
+    top: -4px;
+}
+ul.toborlife-news-archive-list li a {
+    color: #000;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+}
+span.toborlife-news-archive-count {
+    font-size: 10px;
+    background: #ddd;
+    width: 15px;
+    height: 15px;
+    border-radius: 50px;
+    display: inline-block;
+    line-height: 14px;
+    text-align: center;
+}
+.toborlife-news-archive-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.toborlife-news-archive-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.toborlife-news-archive-icon {
+    flex: 0 0 20px; 
+}
+
+.toborlife-news-archive-link {
+    flex: 1; 
+    text-decoration: none;
+    color: #333;
+}
+
+.toborlife-news-archive-count {
+    flex: 0 0 auto;
+    margin-left: 10px;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.blog-sharing-and-tags {
+    margin-top: 0px !important;
+    border-top: none !important;
+    padding-top: 0px !important;
+    padding-bottom: 40px !important;
+}
+
+@media (max-width: 1040px) {
+    .toborlife-news-content,
+    .toborlife-news-sidebar {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+@media (max-width: 1024px) {
+    .toborlife-news-container {
+        padding: 120px 30px;
+    }
+}
+
+
+.toborlife-news-post-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+    flex-wrap: wrap;
+}
+
+.toborlife-author-profile img {
+    border-radius: 50%;
+    display: block;
+    width: 75px;
+    height: 75px;
+}
+
+.toborlife-author-details {
+    display: flex;
+    flex-direction: column; 
+}
+
+.toborlife-author-name a {
+    font-weight: 700;
+    font-family: Inter;
+    font-size: 14px;
+    color:#475FB3;
+    text-transform: capitalize;
+    display: block;
+}
+
+.toborlife-post-date {
+    font-weight: 500;
+    font-family: Inter;
+    font-size: 14px;
+    color:#000;
+}
+.toborlife-news-comments-section {
+    font-family: Inter;
+    color: #000;
+}
+.toborlife-news-comments-section form p{
+    margin-bottom: 10px !important;
+}
+.toborlife-news-comments-section h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+p.comment-notes{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.toborlife-news-comments-section .comment {
+}
+
+.toborlife-news-comments-section .comment-form textarea,
+.toborlife-news-comments-section .comment-form input[type="text"],
+.toborlife-news-comments-section .comment-form input[type="email"] {
+    width: 100%;
+    padding: 7px 10px !important;
+    border: 1px solid #dadada !important;
+    border-radius: 5px !important;
+}
+.form-submit > input[type=submit]{
+    background-color: #506CCD !important;
+    color: #fff !important;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.toborlife-news-post-excerpt a {
+    color: #506ccd !important;
+}
+
+#respond input[type=checkbox] {
+    margin-right: 0px;
+}
+
+.comment-form input#submit:hover {
+    background-color: #475FB3 !important;
+}
