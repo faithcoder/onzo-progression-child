@@ -1,0 +1,214 @@
+/*
+Theme Name: Onzo Progression Child
+Author: 
+Description: Your description goes here
+Version: 1.1
+Template: onzo-progression
+
+This is the child theme for Onzo Progression theme, generated with Generate Child Theme plugin by catchthemes.
+
+(optional values you can add: Theme URI, Author URI, License, License URI, Tags, Text Domain)
+*/
+
+/* CONTACT FORM STYLES  */
+
+#gform_3 input::placeholder{
+    color: #666;
+}
+
+#gform_3 input, #gform_3 select {
+    border-bottom: 1px solid #000;
+    border-radius: 0px;
+    font-family: Helvetica, sans-serif;
+    font-size: 20px;
+    padding: 10px 0px;
+    font-weight: 300;
+    outline: none;
+}
+
+#gform_3 textarea {
+    color: #666 !important;
+    font-size: 20px;
+    font-weight: 300;
+    outline: none;
+    height: 210px !important;
+}
+
+#field_3_16 .ginput_container_checkbox {
+    border-bottom: 1px solid #000;
+    padding: 10px 0px;
+    cursor:pointer;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    background: #fff;
+}
+
+#field_3_16 .ginput_container_checkbox .checkbox-div{
+    font-size:20px;
+    font-weight:300; 
+    position: relative;
+}
+
+.gform_wrapper.gravity-theme .gfield_label {
+    font-size: 20px !important;
+    font-weight: 300 !important;
+    margin-bottom: 8px;
+    padding: 0;
+    font-family: Helvetica;
+    color: #666 !important;
+  }
+
+#gform_submit_button_3, #boxed-layout-pro input.button {
+    background-color: #506CCD!important;
+    color: #fff!important;
+    font-size: 20px!important;
+    font-weight: 500!important;
+    padding: 15px 80px!important;
+    text-transform: capitalize !important;
+    display: block;
+    transition: all 1s;
+}
+
+#input_3_16 input[type='checkbox']{
+    width: 16px;
+    height: 16px;
+    position: relative;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: none;
+    border: 1px solid #666 !important;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    border-radius: 0;
+    padding: 0;
+    margin-right: 5px;
+  }
+
+  .gform_wrapper.gravity-theme .gfield_checkbox label, .gform_wrapper.gravity-theme .gfield_radio label {
+    display: inline-block;
+    font-size: 20px !important;
+    font-weight: 300;
+    color: #666;
+}
+
+h2.gform_title {
+    display: none;
+}
+
+div#field_3_10, .ginput_container.ginput_container_text, 
+.ginput_container.ginput_container_phone,
+.ginput_container.ginput_container_checkbox{
+    max-width: 90%;
+}
+.gform_wrapper.gravity-theme .gfield textarea {
+    width: 95% !important;
+}
+
+#gform_submit_button_3:hover {
+    border: none !important;
+    background-color: red!important;
+}
+
+@media (max-width: 767px) {
+    /*#gform_3 #field_3_14 .gform-field-label, #gform_3 #field_3_16 .gform-field-label {*/
+    /*    background: transparent;*/
+    /*    border: none;*/
+    /*    position: relative;*/
+    /*    color: #000 !important;*/
+    /*    padding: 0;*/
+    /*    height: auto;*/
+        /*display: none;*/
+    /*}*/
+    legend.gfield_label.gform-field-label.gfield_label_before_complex {
+        display: none !important;
+    }
+    #input_3_16 input[type='checkbox']{
+        background-color: transparent !important;
+      }
+
+}
+
+/*contact page social icons list*/
+
+.toborlife-contact-social-icons {
+    display: flex; 
+    gap: 6px; 
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+}
+
+.toborlife-contact-social-icons li {
+    display: flex; 
+    gap: 5px;
+}
+
+.toborlife-contact-social-icons a {
+    display: inline-flex; 
+    text-decoration: none; 
+}
+
+.toborlife-contact-social-icons > img {
+    width: 32px; 
+    height: 32px;
+    display: block; 
+}
+
+/* Optional hover effects */
+.toborlife-contact-social-icons a:hover img {
+    filter: brightness(0.8); 
+    transform: scale(1.1); 
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 767px) {
+    #gform_submit_button_3, #boxed-layout-pro input.button {
+        width: 45%;
+        margin: -40px auto !important;
+    }
+    .gform_wrapper.gravity-theme .gfield textarea {
+        width: 90% !important;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    #contact-sidebar {
+        display: none;
+    }
+}
+
+/* CONTACT FORM STYLES END */
+
+/* ACCESSORIES PANEL STYLES */
+
+.accessor .item {
+    box-shadow: none !important;
+    
+}
+.other-product {
+    background-color: #F5F5F7;
+    border-radius: 20px;
+    transition: all 0.5s;
+    min-height: 400px;
+}
+.other-product:hover {
+    background-color: #D7D7D7;
+}
+.other-product .price {
+    color: #0F0F10;
+    font-size: 16px;
+    padding-bottom: 10px;
+}
+
+.product-info.mt-2 p {
+    font-size: 14px;
+    color: #0f0f10;
+    margin-bottom: 15px;
+}
