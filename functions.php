@@ -28,33 +28,9 @@ function onzo_progression_child_enqueue_styles() {
 // Enqueue custom JS
 function onzo_progression_child_script() {
     wp_enqueue_script('child-script', get_stylesheet_directory_uri() . '/js/coupon-form.js', [], '1.0', true);
-
-    wp_enqueue_script('custom-script', get_stylesheet_directory_uri() . '/js/custom.js', [], '1.0', true);
 }
 add_action('wp_enqueue_scripts', 'onzo_progression_child_script');
 
 
 // Include Custom Post Types
 require_once get_stylesheet_directory() . '/inc/cpt-robot-diaries.php';
-
-
-// add_filter('template_include', 'robot_diaries_template_redirect', 99);
-// function robot_diaries_template_redirect($template) {
-//     if (is_post_type_archive('robot_diaries')) {
-//         // Load blog template for Robot Diaries archive
-//         $new_template = locate_template('archive-robot_diaries.php');
-//         if (!empty($new_template)) {
-//             return $new_template;
-//         }
-//     }
-
-//     if (is_singular('robot_diaries')) {
-//         // Load single.php for Robot Diaries single posts
-//         $new_template = locate_template('single-robot_diaries.php');
-//         if (!empty($new_template)) {
-//             return $new_template;
-//         }
-//     }
-
-//     return $template;
-// }
