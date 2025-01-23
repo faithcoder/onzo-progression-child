@@ -186,6 +186,21 @@ div#field_3_10, .ginput_container.ginput_container_text,
 
 /* CONTACT FORM STYLES END */
 
+
+/* styles for CTA pattern block */
+
+h2.blog-cta-title {
+    padding-top: 15px !important;
+}
+
+.blog-cta-button > a {
+    color: #000 !important;
+    padding: 6px 30px !important;
+    display: inline-block;
+    margin-bottom: 20px !important;
+}
+/* styles for CTA panel */
+
 /* ACCESSORIES PANEL STYLES */
 
 .accessor .item {
