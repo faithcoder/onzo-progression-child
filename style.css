@@ -2,7 +2,7 @@
 Theme Name: Onzo Progression Child
 Author: 
 Description: Your description goes here
-Version: 1.1
+Version: 1.2
 Template: onzo-progression
 
 This is the child theme for Onzo Progression theme, generated with Generate Child Theme plugin by catchthemes.
@@ -226,4 +226,35 @@ h2.blog-cta-title {
     font-size: 14px;
     color: #0f0f10;
     margin-bottom: 15px;
+}
+
+
+/* trying code */
+
+.variation-buttons-wrapper {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.variation-selector-btn {
+    padding: 15px 25px;
+    border: 2px solid #ddd;
+    background: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.variation-selector-btn.active {
+    border-color: #000;
+    background: #000;
+    color: white;
+}
+
+.variation-selector-btn b {
+    display: block;
+    line-height: 1.2;
 }

@@ -61,3 +61,31 @@ jQuery(document).ready(function ($) {
         $(this).closest('form').submit(); // Submit the form when the icon is clicked
     });
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const variationBtns = document.querySelectorAll('.variation-selector-btn');
+    
+    variationBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            // Remove active class from all buttons
+            variationBtns.forEach(b => b.classList.remove('active'));
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            const variationData = JSON.parse(this.dataset.variation);
+            
+            // Update content
+            document.querySelector('.tobor-product-title').innerHTML = variationData.title_html;
+            document.querySelector('#variation-description').textContent = variationData.description;
+            document.querySelector('.variation_price').innerHTML = variationData.price_html;
+            document.querySelector('input[name="variation_id"]').value = variationData.variation_id;
+            
+            // Update Affirm price
+            const affirmElement = document.querySelector('.affirm-as-low-as');
+            if (affirmElement) {
+                affirmElement.setAttribute('data-amount', variationData.display_price + '00');
+            }
+        });
+    });
+});

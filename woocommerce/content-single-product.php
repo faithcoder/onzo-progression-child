@@ -279,20 +279,62 @@ if ( $slug ) {
                         $variation['wattage'] = get_post_meta( $variation[ 'variation_id' ], '_wattage', true ); ?>
 
                         <div class="tab-pane fade <?php echo $show;?> <?php echo $active;?>" id="<?php echo $variation['variation_id'];?>_id" role="tabpanel" aria-labelledby="<?php echo $variation['variation_id'];?>-tab">
+                            
+             
                             <div class="productInformationWrapper row justify-content-between">
                                 <div class="ProductPicture col-lg-6 col-md-12">
                                     <div id="single-product-info-background">
-                                    <div class="woocommerce woocommerce-shop-single">
-                                    <?php do_action( 'woocommerce_before_single_product_summary' ); ?>
+                                        <div class="woocommerce woocommerce-shop-single">
+                                            <?php do_action( 'woocommerce_before_single_product_summary' ); ?>
+                                        </div>
                                     </div>
                                 </div>
-                                </div>
                                 <div class="productInformation col-lg-6 col-md-12 ps-5">
-                                    <h2 class="tobor-product-title"><?php echo $variation['wattage'];?></h2>
-                                    <h4 class="tobor-varation-name">Unitree Go2 Edu</h4>
-                                    <p class="tobor-variation-description">
-                                        <?php echo $variation['variation_description'];?>
-                                    </p>
+                                   
+                                <h2 class="tobor-product-title">
+                                    <?php 
+                                    // Display initial title for the first variation
+                                    foreach($variations[0]['attributes'] as $attribute) {
+                                        echo '<b style="font-size:20px">' . esc_html($attribute) . '</b><br>';
+                                    }
+                                    $initial_model = get_post_meta($variations[0]['variation_id'], '_model', true);
+                                    echo '<b style="font-size:16px">' . esc_html($initial_model) . '</b>';
+                                    ?>
+                                </h2>
+
+                                <h4 class="tobor-varation-name">Unitree Go2 Edu</h4>
+                                <p class="tobor-variation-description" id="variation-description">
+                                    <?php echo $variations[0]['variation_description']; ?>
+                                </p>
+
+                                <div class="variation-buttons-wrapper mb-4">
+                                    <?php 
+                                    foreach ($variations as $index => $variation) {
+                                        $active_class = ($index === 0) ? 'active' : '';
+                                        $model = get_post_meta($variation['variation_id'], '_model', true);
+                                        $title_html = '';
+                                        foreach($variation['attributes'] as $attribute) {
+                                            $title_html .= '<b style="font-size:20px">' . esc_html($attribute) . '</b><br>';
+                                        }
+                                        $title_html .= '<b style="font-size:16px">' . esc_html($model) . '</b>';
+                                        
+                                        $variation_data = htmlspecialchars(json_encode([
+                                            'description' => $variation['variation_description'],
+                                            'price_html' => $variation['price_html'],
+                                            'variation_id' => $variation['variation_id'],
+                                            'display_price' => $variation['display_price'],
+                                            'title_html' => $title_html
+                                        ]), ENT_QUOTES, 'UTF-8');
+                                    ?>
+                                        <button 
+                                            class="variation-selector-btn <?php echo $active_class; ?>" 
+                                            data-variation='<?php echo $variation_data; ?>'
+                                        >
+                                            <?php echo $title_html; ?>
+                                        </button>
+                                    <?php } ?>
+                                </div>
+
                                     <form class="variations_form cart" action="<?php echo esc_url( apply_filters( 'woocommerce_add_to_cart_form_action', $product->get_permalink() ) ); ?>" method="post" enctype="multipart/form-data" data-product_id="<?php the_ID(); ?>">   
 
                                         <div class="cartinformation row justify-content-between align-items-start">
@@ -331,35 +373,21 @@ if ( $slug ) {
                                             
                                         </div>
                                     </form>
-                                    
+
                                 </div>
                             </div>
+
+
+
                         </div>
                     <?php $x++; } ?>
                     </div>
-                    <?php if($product->get_id() != 7281){ ?>
-                    <ul class="nav nav-tabs" id="myTab-kv-6" role="tablist">
-                        <?php 
-                           foreach ( $variations as $variation ) { 
-                            foreach($variation['attributes'] as $attributes){
-                            if($y == 1){ $active = 'active'; $class='first-width-long';} else {$active =''; $class='';}  
-                            $variation['model'] = get_post_meta( $variation[ 'variation_id' ], '_model', true ); ?>
-                            <li class="nav-item mx-2" role="presentation">
-                                <button class="nav-link tab-button-home-dog <?php echo $active;?> <?php echo $class;?>  click-slider-initiate" id="<?php echo $variation['variation_id'];?>-tab" data-bs-toggle="tab" data-bs-target="#<?php echo $variation['variation_id'];?>_id"
-                                    type="button" role="tab" aria-controls="<?php echo $variation['variation_id'];?>" aria-selected="true"><b
-                                        style="font-size:20px"><?php echo $attributes;?></b><br>
-                                    <b style="font-size:16px"><?php echo $variation['model'];?></b>
-                                </button>
-                            </li>
-                        <?php  $y++; } } ?>
-                    </ul>
-                    <?php } ?>
+                    
                 </div>
                 
                 
                 <!--=============== For Mobile View =====================-->
-                
-                
+             
                 <!--=============== For Mobile View END ===============-->
             </div>
         </div>
