@@ -291,18 +291,19 @@ if ( $slug ) {
                                 </div>
                                 <div class="productInformation col-lg-6 col-md-12 ps-5">
                                    
-                                <h2 class="tobor-product-title">
+                               
                                     <?php 
                                     // Display initial title for the first variation
-                                    foreach($variations[0]['attributes'] as $attribute) {
-                                        echo '<b style="font-size:20px">' . esc_html($attribute) . '</b><br>';
-                                    }
+                                    foreach($variations[0]['attributes'] as $attribute):
+                                        echo '<h2 class="tobor-product-title">' . esc_html($attribute) . '</h2>';
+                                    endforeach;
                                     $initial_model = get_post_meta($variations[0]['variation_id'], '_model', true);
-                                    echo '<b style="font-size:16px">' . esc_html($initial_model) . '</b>';
+                                    echo '<h4 class="tobor-varation-name">' . esc_html($initial_model) . '</h4>';
                                     ?>
-                                </h2>
+                                
 
-                                <h4 class="tobor-varation-name">Unitree Go2 Edu</h4>
+                                
+                                
                                 <p class="tobor-variation-description" id="variation-description">
                                     <?php echo $variations[0]['variation_description']; ?>
                                 </p>
@@ -314,7 +315,7 @@ if ( $slug ) {
                                         $model = get_post_meta($variation['variation_id'], '_model', true);
                                         $title_html = '';
                                         foreach($variation['attributes'] as $attribute) {
-                                            $title_html .= '<b style="font-size:20px">' . esc_html($attribute) . '</b><br>';
+                                            $title_html .= '<b style="font-size:20px">' . esc_html($attribute) . '</b>';
                                         }
                                         $title_html .= '<b style="font-size:16px">' . esc_html($model) . '</b>';
                                         
@@ -330,7 +331,7 @@ if ( $slug ) {
                                             class="variation-selector-btn <?php echo $active_class; ?>" 
                                             data-variation='<?php echo $variation_data; ?>'
                                         >
-                                            <?php echo $title_html; ?>
+                                            <?php echo $attribute; ?>
                                         </button>
                                     <?php } ?>
                                 </div>
