@@ -226,18 +226,15 @@ a.tobor-nav-item:hover {
 }
 
 
-
-
 /* RESPONSIVE CODES FOR BUSINESS APPLICATION AREA END  */
-
 
 .woocommerce-product-gallery__image > a > img {
     display: block;
-    max-width: 80% !important;
+    max-width: 100% !important;
     height: auto;
     box-shadow: none;
     margin: 0 auto;
-  }
+}
 .woocommerce-product-thumbnail > a > img {
     width: 450px !important;
 }
@@ -249,16 +246,12 @@ button.single_feature_button {
     display: none;
 }
 
-.post-7281 #myTabContent-kv-6{
-    border: none !important;
-    border-top: none !important;
-}
 .woocommerce-product-thumbnails .active {
     border: 2px solid #0073aa;
 }
 
-.woocommerce div.product div.images .flex-control-thumbs {
-    display: none;
+ol.flex-control-thumbs {
+    display: none !important;
 }
 .flex-viewport{
     border: none;
@@ -352,7 +345,7 @@ h2.tobor-product-title {
     line-height: 42px;
 }
 
-h4.tobor-varation-name {
+h4.tobor-variation-name {
     font-size: 26px;
     font-weight: 400;
     font-family: Helvetica, sans-serif;
@@ -485,7 +478,7 @@ input[type="number"] {
       h3.variation_price {
         font-size: 30px !important;
       }
-      h4.tobor-varation-name {
+      h4.tobor-variation-name {
         font-size: 24px;
       }
       .whats-in-the-box-image-right {
