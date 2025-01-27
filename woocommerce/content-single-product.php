@@ -269,45 +269,56 @@ if ( $slug ) {
             <div class="container">
                 <div class="tabs-x tab-bordered tabs-below tab-align-center" id="">
                     <div class="tab-content" id="myTabContent-kv-6">
-                    <?php 
-                       foreach ( $variations as $variation ) {  
-                        if($product->get_id() == 7281){ 
-                        if($x == 3){ $active = 'active'; $show='show';} else {$active =''; $show='';} 
-                        } else {
-                            if($x == 1){ $active = 'active'; $show='show';} else {$active =''; $show='';} 
-                        }
-                        $variation['wattage'] = get_post_meta( $variation[ 'variation_id' ], '_wattage', true ); ?>
-
-                        <div class="tab-pane fade <?php echo $show;?> <?php echo $active;?>" id="<?php echo $variation['variation_id'];?>_id" role="tabpanel" aria-labelledby="<?php echo $variation['variation_id'];?>-tab">
+                        <?php 
+                        // Get the current product ID
+                        $current_product_id = $product->get_id();
+                        
+                        
+                        $special_products = [
+                            7281 => ['default_active' => 3], 
                             
-             
-                            <div class="productInformationWrapper row justify-content-between">
-                                <div class="ProductPicture col-lg-6 col-md-12">
-                                    <div id="single-product-info-background">
-                                        <div class="woocommerce woocommerce-shop-single">
-                                            <?php do_action( 'woocommerce_before_single_product_summary' ); ?>
-                                        </div>
+                        ];
+                        
+                        foreach ($variations as $index => $variation) {
+                            // Determine which variation should be active
+                            $is_active = false;
+                            
+                            if (isset($special_products[$current_product_id])) {
+                                // Special product logic
+                                $is_active = ($index + 1) === $special_products[$current_product_id]['default_active'];
+                            } else {
+                                // Default behavior - first variation is active
+                                $is_active = $index === 0;
+                            }
+                            
+                            $active = $is_active ? 'active' : '';
+                            $show = $is_active ? 'show' : '';
+                            
+                            $variation['wattage'] = get_post_meta($variation['variation_id'], '_wattage', true);
+                        ?>
+                        <div class="tab-pane fade <?php echo $show; ?> <?php echo $active; ?>" 
+                        id="<?php echo $variation['variation_id']; ?>_id" 
+                        role="tabpanel" 
+                        aria-labelledby="<?php echo $variation['variation_id']; ?>-tab">
+                        <div class="productInformationWrapper row justify-content-between">
+                            <div class="ProductPicture col-lg-6 col-md-12">
+                                <div id="single-product-info-background">
+                                    <div class="woocommerce woocommerce-shop-single">
+                                    <?php do_action( 'woocommerce_before_single_product_summary' ); ?>
                                     </div>
                                 </div>
-                                <div class="productInformation col-lg-6 col-md-12 ps-5">
-                                   
-                               
-                                    <?php 
-                                    // Display initial title for the first variation
+                            </div>
+                            <div class="productInformation col-lg-6 col-md-12 ps-5">
+                                <?php 
                                     foreach($variations[0]['attributes'] as $attribute):
                                         echo '<h2 class="tobor-product-title">' . esc_html($attribute) . '</h2>';
                                     endforeach;
                                     $initial_model = get_post_meta($variations[0]['variation_id'], '_model', true);
                                     echo '<h4 class="tobor-varation-name">' . esc_html($initial_model) . '</h4>';
                                     ?>
-                                
-
-                                
-                                
                                 <p class="tobor-variation-description" id="variation-description">
                                     <?php echo $variations[0]['variation_description']; ?>
                                 </p>
-
                                 <div class="variation-buttons-wrapper mb-4">
                                     <?php 
                                     foreach ($variations as $index => $variation) {
@@ -315,9 +326,9 @@ if ( $slug ) {
                                         $model = get_post_meta($variation['variation_id'], '_model', true);
                                         $title_html = '';
                                         foreach($variation['attributes'] as $attribute) {
-                                            $title_html .= '<b style="font-size:20px">' . esc_html($attribute) . '</b>';
+                                            $title_html .= esc_html($attribute);
                                         }
-                                        $title_html .= '<b style="font-size:16px">' . esc_html($model) . '</b>';
+                                        $title_html .= esc_html($model);
                                         
                                         $variation_data = htmlspecialchars(json_encode([
                                             'description' => $variation['variation_description'],
@@ -327,68 +338,49 @@ if ( $slug ) {
                                             'title_html' => $title_html
                                         ]), ENT_QUOTES, 'UTF-8');
                                     ?>
-                                        <button 
-                                            class="variation-selector-btn <?php echo $active_class; ?>" 
-                                            data-variation='<?php echo $variation_data; ?>'
-                                        >
-                                            <?php echo $attribute; ?>
-                                        </button>
+                                    <button 
+                                    class="variation-selector-btn <?php echo $active_class; ?>" 
+                                    data-variation='<?php echo $variation_data; ?>'
+                                    >
+                                    <?php echo $attribute; ?>
+                                    </button>
                                     <?php } ?>
                                 </div>
-
-                                    <form class="variations_form cart" action="<?php echo esc_url( apply_filters( 'woocommerce_add_to_cart_form_action', $product->get_permalink() ) ); ?>" method="post" enctype="multipart/form-data" data-product_id="<?php the_ID(); ?>">   
-
-                                        <div class="cartinformation row justify-content-between align-items-start">
-                                            <div class="price col-12 d-flex flex-column justify-content-center align-items-start">
-                                                <h3 class="variation_price"><?php echo $variation['price_html'];?></h3>
-                                            </div>
-
-                                            <div class="affirm-img">
-                                                <p id="learn-more" class="affirm-as-low-as" data-affirm-color="blue" data-learnmore-show="true" data-page-type="product" data-amount="<?php echo $variation['display_price'];?>00">Starting at <span class="affirm-ala-price">$167</span>/mo or 0% APR with <span class="__affirm-logo __affirm-logo-blue __ligature__affirm_full_logo__ __processed">Affirm</span>. <a class="affirm-modal-trigger" aria-label="Check your purchasing power - Learn more about Affirm Financing (opens in modal)" href="javascript:void(0)">Check your purchasing power</a></p>
-                                            </div>
-
-                                            <div class="col-6">
-                                                <div class="add-quantity-section justify-content-start">
-                                                    <button type="submit" id="add-to-cart-" class="single_add_to_cart_button button alt<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>"><?php echo esc_html( $product->single_add_to_cart_text() ); ?></button>
-                                                
-                                                    <?php do_action( 'woocommerce_after_add_to_cart_button' ); ?>
-                                                
-                                                    <input type="hidden" name="add-to-cart" value="<?php echo absint( $product->get_id() ); ?>" />
-                                                    <input type="hidden" name="product_id" value="<?php echo absint( $product->get_id() ); ?>" />
-                                                    <input type="hidden" name="variation_id" class="variation_id" value="<?php echo $variation['variation_id'];?>" />
-                                                </div>
-                                            </div>
-
-                                            <div class="col-6 d-flex flex-column justify-content-start align-items-start">
-                                            
-                                                 <div class="toborlife-custom-number-input">
-                                                    <input name="quantity" type="number" class="toborlife-qty quantity__input" value="1" />
-                                                    <div class="toborlife-qty-controls">
-                                                        <a class="toborlife-qty-up" aria-label="Increase quantity"></a>
-                                                        <a class="toborlife-qty-down" aria-label="Decrease quantity"></a>
-                                                    </div>
-                                                </div>
-                                               
-                                            </div>
-                                            
-                                            
+                                <form class="variations_form cart" action="<?php echo esc_url( apply_filters( 'woocommerce_add_to_cart_form_action', $product->get_permalink() ) ); ?>" method="post" enctype="multipart/form-data" data-product_id="<?php the_ID(); ?>">
+                                    <div class="cartinformation row justify-content-between align-items-start">
+                                    <div class="price col-12 d-flex flex-column justify-content-center align-items-start">
+                                        <h3 class="variation_price"><?php echo $variation['price_html'];?></h3>
+                                    </div>
+                                    <div class="affirm-img">
+                                        <p id="learn-more" class="affirm-as-low-as" data-affirm-color="blue" data-learnmore-show="true" data-page-type="product" data-amount="<?php echo $variation['display_price'];?>00">Starting at <span class="affirm-ala-price">$167</span>/mo or 0% APR with <span class="__affirm-logo __affirm-logo-blue __ligature__affirm_full_logo__ __processed">Affirm</span>. <a class="affirm-modal-trigger" aria-label="Check your purchasing power - Learn more about Affirm Financing (opens in modal)" href="javascript:void(0)">Check your purchasing power</a></p>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="add-quantity-section justify-content-start">
+                                            <button type="submit" id="add-to-cart-" class="single_add_to_cart_button button alt<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>"><?php echo esc_html( $product->single_add_to_cart_text() ); ?></button>
+                                            <?php do_action( 'woocommerce_after_add_to_cart_button' ); ?>
+                                            <input type="hidden" name="add-to-cart" value="<?php echo absint( $product->get_id() ); ?>" />
+                                            <input type="hidden" name="product_id" value="<?php echo absint( $product->get_id() ); ?>" />
+                                            <input type="hidden" name="variation_id" class="variation_id" value="<?php echo $variation['variation_id'];?>" />
                                         </div>
-                                    </form>
-
-                                </div>
+                                    </div>
+                                    <div class="col-6 d-flex flex-column justify-content-start align-items-start">
+                                        <div class="toborlife-custom-number-input">
+                                            <input name="quantity" type="number" class="toborlife-qty quantity__input" value="1" />
+                                            <div class="toborlife-qty-controls">
+                                                <a class="toborlife-qty-up" aria-label="Increase quantity"></a>
+                                                <a class="toborlife-qty-down" aria-label="Decrease quantity"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </form>
                             </div>
-
-
-
                         </div>
-                    <?php $x++; } ?>
+                        </div>
+                        <?php } ?>
                     </div>
-                    
                 </div>
-                
-                
                 <!--=============== For Mobile View =====================-->
-             
                 <!--=============== For Mobile View END ===============-->
             </div>
         </div>
