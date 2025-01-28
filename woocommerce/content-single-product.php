@@ -116,3 +116,55 @@ $variations = $product->is_type('variable') ? $product->get_available_variations
         </div>
     </div>
 </div>
+
+
+
+<div class="section-6 pb-5">
+    <div class="container">
+        <div class="mtb-50">
+            <h4 class="font_30 font800">Accessories</h4>
+        </div>
+        <div class="accessor text-center owl-carousel owl-theme mb-2">
+            <?php $args = array(
+                  'post_type' => 'product',
+                  'post_status' => 'publish',
+                  'posts_per_page' => 6,
+                  'orderby' => 'rand',
+                  'tax_query' => array( array(
+                      'taxonomy'         => 'product_cat',
+                      'field'            => 'slug', 
+                      'terms'            => 'home-dog', //terms will be changed according to the product slug like 'accessories'
+                  )),
+                  ) ;
+                $loop = new WP_Query($args); 
+                 if(!empty($loop)) {  
+                 while ($loop->have_posts()) : $loop->the_post();
+                  global $product; 
+                  $product_id =get_the_ID();
+                  $_product = wc_get_product( $product_id );
+                  $image = wp_get_attachment_image_src( get_post_thumbnail_id( $product_id ), 'single-post-thumbnail' );
+                  if(!empty($image)) { 
+                      $pro_image = $image[0];
+                  } 
+                  else{
+                      $pro_image = get_template_directory_uri().'/assets/images/no-image-icon.png';
+                  } 
+                  ?>
+
+            <div class="item">
+                <div class="box-shadow">
+                    <div class="other-product">
+                        <a href="<?php echo get_permalink();?>"><img src="<?php echo $pro_image;?>"></a>
+                        <div class="product-info mt-2">
+                            <a href="<?php echo get_permalink();?>"><h3><?php the_title(); ?></h3>
+                            <p>Unitree Go2 Pro</p>
+                            <h4 class="price"><?php echo $_product->get_price_html();?></h4></a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php endwhile; } ?>
+        </div>
+    </div>
+</div>
