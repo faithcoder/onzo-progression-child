@@ -10,88 +10,84 @@ This is the child theme for Onzo Progression theme, generated with Generate Chil
 (optional values you can add: Theme URI, Author URI, License, License URI, Tags, Text Domain)
 */
 
-/* CONTACT FORM STYLES  */
+/* CONTACT PAGE STYLES  */
 
-#gform_3 input::placeholder{
+#gform_3 input::placeholder {
     color: #666;
 }
+
 
 #gform_3 input, #gform_3 select {
     border-bottom: 1px solid #000;
     border-radius: 0px;
-    font-family: Helvetica, sans-serif;
+    font-family: Helvetica, Arial, sans-serif;
     font-size: 20px;
     padding: 10px 0px;
     font-weight: 300;
     outline: none;
 }
-
 #gform_3 textarea {
     color: #666 !important;
     font-size: 20px;
     font-weight: 300;
     outline: none;
     height: 210px !important;
+    resize: none;
 }
-
 #field_3_16 .ginput_container_checkbox {
     border-bottom: 1px solid #000;
     padding: 10px 0px;
-    cursor:pointer;
+    cursor: pointer;
     position: absolute;
     top: 0px;
     width: 100%;
     background: #fff;
 }
-
-#field_3_16 .ginput_container_checkbox .checkbox-div{
-    font-size:20px;
-    font-weight:300; 
+#field_3_16 .ginput_container_checkbox .checkbox-div {
+    font-size: 20px;
+    font-weight: 300;
     position: relative;
 }
-
 .gform_wrapper.gravity-theme .gfield_label {
     font-size: 20px !important;
     font-weight: 300 !important;
     margin-bottom: 8px;
     padding: 0;
-    font-family: Helvetica;
+    font-family: Helvetica, Arial, sans-serif; 
     color: #666 !important;
-  }
-
+}
 #gform_submit_button_3, #boxed-layout-pro input.button {
-    background-color: #506CCD!important;
-    color: #fff!important;
-    font-size: 20px!important;
-    font-weight: 500!important;
-    padding: 15px 80px!important;
+    background-color: #506CCD !important;
+    color: #fff !important;
+    font-size: 20px !important;
+    font-weight: 500 !important;
+    padding: 15px 80px !important;
     text-transform: capitalize !important;
     display: block;
-    transition: all 1s;
+    transition: all 0.3s ease; 
+}
+#gform_submit_button_3:hover, #boxed-layout-pro input.button:hover {
+    background-color: #475FB3 !important;
 }
 
-#input_3_16 input[type='checkbox']{
+#input_3_16 input[type='checkbox'] {
     width: 16px;
     height: 16px;
     position: relative;
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
+    box-sizing: border-box; 
     overflow: hidden;
     cursor: pointer;
-    background-color: none;
+    background-color: transparent; 
     border: 1px solid #666 !important;
     outline: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -o-appearance: none;
-    appearance: none;
+    appearance: none; 
     border-radius: 0;
     padding: 0;
     margin-right: 5px;
-  }
+}
 
-  .gform_wrapper.gravity-theme .gfield_checkbox label, .gform_wrapper.gravity-theme .gfield_radio label {
+.gform_wrapper.gravity-theme .gfield_checkbox label,
+.gform_wrapper.gravity-theme .gfield_radio label {
     display: inline-block;
     font-size: 20px !important;
     font-weight: 300;
@@ -102,38 +98,30 @@ h2.gform_title {
     display: none;
 }
 
-div#field_3_10, .ginput_container.ginput_container_text, 
+div#field_3_10,
+.ginput_container.ginput_container_text,
 .ginput_container.ginput_container_phone,
-.ginput_container.ginput_container_checkbox{
+.ginput_container.ginput_container_checkbox {
     max-width: 90%;
 }
+
 .gform_wrapper.gravity-theme .gfield textarea {
     width: 95% !important;
 }
 
 #gform_submit_button_3:hover {
     border: none !important;
-    background-color: red!important;
 }
 
 @media (max-width: 767px) {
-    /*#gform_3 #field_3_14 .gform-field-label, #gform_3 #field_3_16 .gform-field-label {*/
-    /*    background: transparent;*/
-    /*    border: none;*/
-    /*    position: relative;*/
-    /*    color: #000 !important;*/
-    /*    padding: 0;*/
-    /*    height: auto;*/
-        /*display: none;*/
-    /*}*/
     legend.gfield_label.gform-field-label.gfield_label_before_complex {
         display: none !important;
     }
-    #input_3_16 input[type='checkbox']{
+    #input_3_16 input[type='checkbox'] {
         background-color: transparent !important;
-      }
-
+    }
 }
+
 
 /*contact page social icons list*/
 
@@ -170,8 +158,10 @@ div#field_3_10, .ginput_container.ginput_container_text,
 
 @media screen and (max-width: 767px) {
     #gform_submit_button_3, #boxed-layout-pro input.button {
-        width: 45%;
+        max-width: 182px !important;
         margin: -40px auto !important;
+        padding: 15px 60px !important;
+        display: inline-block !important;
     }
     .gform_wrapper.gravity-theme .gfield textarea {
         width: 90% !important;
@@ -184,7 +174,7 @@ div#field_3_10, .ginput_container.ginput_container_text,
     }
 }
 
-/* CONTACT FORM STYLES END */
+/* CONTACT PAGE STYLES END */
 
 
 /* styles for CTA pattern block */
@@ -205,7 +195,6 @@ h2.blog-cta-title {
 
 .accessor .item {
     box-shadow: none !important;
-    
 }
 .other-product {
     background-color: #F5F5F7;

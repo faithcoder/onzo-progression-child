@@ -1538,3 +1538,12 @@ body:not(.rtl) .elementor-7074 .elementor-element.elementor-element-cae9837 {
 .wc-block-components-totals-coupon.wc-block-components-panel {
     padding-top: 10px;
 }
+input#input_11_3,
+input#input_11_4,
+input#input_11_1_3,
+input#input_11_1_6{
+    border-radius: 0;
+    background: transparent !important;
+    border-bottom: 1px solid #c7c1c1 ;
+    color: #000 !important;
+}
