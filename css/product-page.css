@@ -486,3 +486,13 @@ input[type="number"] {
       }
 
 }
+
+.table tr.even-row > th, 
+.table tr.even-row > td{
+    color: #000;
+    font-weight: 400;
+}
+.table tr.odd-row > th,
+.table tr.odd-row > td{
+    color: #595959 !important;
+}
