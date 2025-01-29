@@ -259,28 +259,33 @@
         </div>
     </div>
 </div>
+
+<!-- SPEC TABLE -->
+
 <div class="width-container-pro section-3 table-chart-1  product-specification">
     <div class="only-desktop">
         <div class="container">
             <?php 
                 $table = get_field( 'specs_table' );
 
-                if ( ! empty ( $table ) ) {
+                if (!empty($table)) {
                     echo '<table class="table">';
                     echo '<tbody>';
                     $strong = 0;
-                    foreach ( $table['body'] as $tr ) {
-                        echo '<tr>';
+                    $row_count = 0;
+                    foreach ($table['body'] as $tr) {
+                        $row_class = ($row_count % 2 == 0) ? 'even-row' : 'odd-row';
+                        echo '<tr class="' . $row_class . '">';
                         $count = 0; // Initialize a counter for each row
-                        foreach ( $tr as $td ) {
+                        foreach ($tr as $td) {
                             if ($count == 0) {
-                                echo '<th>';
+                                echo '<th class="border-bottom-0">';
                             } else {
                                 $strong++;
                                 if ($strong <= 4) {
-                                    echo '<td><strong>';
+                                    echo '<td class="border-bottom-0">';
                                 } else {
-                            echo '<td>';
+                                    echo '<td class="border-bottom-0">';
                                 }
                             }
                             echo $td['c'];
@@ -288,27 +293,88 @@
                                 echo '</th>';
                             } else {
                                 if ($strong <= 4) {
-                                    echo '</strong></td>';
+                                    echo '</td>';
                                 } else {
-                            echo '</td>';
+                                    echo '</td>';
                                 }
                             }
-                            $count++; // Increment the counter
+                            $count++; 
                         }
                         echo '</tr>';
+                        $row_count++; 
                     }
-                    echo '<tr><td colspan="4"><br>*Voice function includes offline voice interaction, commands, intercom and music play.</td></tr></tbody>';
+                    
+                    // Add the final note row with appropriate even/odd class
+                    $final_row_class = ($row_count % 2 == 0) ? 'even-row' : 'odd-row';
+                    echo '<tr class="' . $final_row_class . '"><td colspan="4" class="border-bottom-0"><br>*Voice function includes offline voice interaction, commands, intercom and music play.</td></tr>';
+                    echo '</tbody>';
                     echo '</table>';
                 }
-                ?>
+            ?>
 
+            <!--             <table class="table table-striped ">
+              <thead>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>Average Running Speed (approx.)</th>
+                  <td><strong>3.5 m/s</strong></td>
+                </tr>
+                <tr>
+                  <th>Accepts Voice Commands*</th>
+                  <td><strong>Yes</strong></td>
+                </tr>
+                <tr>
+                  <th>ChatGPT and AI Functionality (Enhanced Computing)</th>
+                  <td><strong>8-Core High-Performance CPU</strong></td>
+                </tr>
+                <tr>
+                  <th>Intelligent Side-Follow System (Robot matches your speed and stays with you)</th>
+                  <td><strong>Yes</strong></td>
+                </tr>
+                <tr>
+                  <th>Max Payload (approx.)</th>
+                  <td>22 lb</td>
+                </tr>
+                <tr>
+                  <th>Voltage</th>
+                  <td>28V-33.6V</td>
+                </tr>
+                <tr>
+                  <th>Warranty</th>
+                  <td>1 year</td>
+                </tr>
+                <tr>
+                  <th>Battery Power / Battery Life</th>
+                  <td>15,000 mAh / upto 4 hrs</td>
+                </tr>
+                <tr>
+                  <th>Foot-End Force Sensor</th>
+                  <td>No - Edu model only</td>
+                </tr>
+                <tr>
+                  <th>Secondary Development Support with High Computing Power Module</th>
+                  <td>No - Edu model only</td>
+                </tr>
+                <tr>
+                  <th>Charger</th>
+                  <td>33.6V 3.5A</td>
+                </tr>    
+                <tr><td colspan="4"><br>*Voice function includes offline voice interaction, commands, intercom and music play.</td></tr>
+              </tbody>
+            </table> -->
         </div>
     </div>
 
     <!-- For SMALL SCREEN -->
     <!-- For SMALL SCREEN -->
     <div class="d-lg-none d-sm-table">
-        
+        <!--<div class="btn-group w-100 mb-4" role="group">-->
+        <!--    <button type="button" class="btn btn_first btn-secondary active rounded-0 option-button" data-target="air-first">Air</button>-->
+        <!--    <button type="button" class="btn btn_first btn-secondary rounded-0 option-button" data-target="pro-first">Pro</button>-->
+        <!--    <button type="button" class="btn btn_first btn-secondary rounded-0 option-button" data-target="edu-first">Edu</button>-->
+        <!--</div>-->
+
         <!-- 	HIDDEN TABLE	 -->
         <div class="d-none table-responsive-first" id="air-first-table1">
             <table class="table table-hover mb-0">
@@ -360,35 +426,95 @@
         </div>
         <div class="table-responsive-first" id="pro-first-table1">
             <?php 
-$table = get_field( 'specs_table' );
+                $table = get_field( 'specs_table' );
 
-if ( ! empty ( $table ) ) {
-	echo '<table class="table table-striped table-hover mb-0">';
-	echo '<tbody>';
-	foreach ( $table['body'] as $tr ) {
-		echo '<tr>';
-		$count = 0; // Initialize a counter for each row
-		foreach ( $tr as $td ) {
-			if ($count == 0) {
-				echo '<th scope="row" class="border-bottom-0">';
-			} else {
-				echo '<td class="border-bottom-0"><strong>';
-			}
-			echo $td['c'];
-			if ($count == 0) {
-				echo '</th>';
-			} else {
-				echo '</strong></td>';
-			}
-			$count++; // Increment the counter
-		}
-		echo '</tr>';
-	}
-	echo '</tbody>';
-	echo '</table>';
-}
-?>
-            
+                if (!empty($table)) {
+                    echo '<table class="table">';
+                    echo '<tbody>';
+                    $strong = 0;
+                    $row_count = 0;
+                    foreach ($table['body'] as $tr) {
+                        $row_class = ($row_count % 2 == 0) ? 'even-row' : 'odd-row';
+                        echo '<tr class="' . $row_class . '">';
+                        $count = 0; // Initialize a counter for each row
+                        foreach ($tr as $td) {
+                            if ($count == 0) {
+                                echo '<th class="border-bottom-0">';
+                            } else {
+                                $strong++;
+                                if ($strong <= 4) {
+                                    echo '<td class="border-bottom-0">';
+                                } else {
+                                    echo '<td class="border-bottom-0">';
+                                }
+                            }
+                            echo $td['c'];
+                            if ($count == 0) {
+                                echo '</th>';
+                            } else {
+                                if ($strong <= 4) {
+                                    echo '</td>';
+                                } else {
+                                    echo '</td>';
+                                }
+                            }
+                            $count++; 
+                        }
+                        echo '</tr>';
+                        $row_count++; 
+                    }
+                    
+                    // Add the final note row with appropriate even/odd class
+                    $final_row_class = ($row_count % 2 == 0) ? 'even-row' : 'odd-row';
+                    echo '<tr class="' . $final_row_class . '"><td colspan="4" class="border-bottom-0"><br>*Voice function includes offline voice interaction, commands, intercom and music play.</td></tr>';
+                    echo '</tbody>';
+                    echo '</table>';
+                }
+                ?>
+            <!--           <table class="table table-striped table-hover mb-0">
+            <tbody>
+              <tr>
+              <th scope="row" class="border-bottom-0">Average Running Speed (approx.)</th>
+              <td class="border-bottom-0"><strong>3.5 m/s</strong></td>
+            </tr>
+            <tr>
+              <th scope="row" class="border-bottom-0">Accepts Voice Commands*</th>
+              <td class="border-bottom-0"><strong>Yes</strong></td>
+            </tr>
+            <tr>
+              <th scope="row" class="border-bottom-0">ChatGPT and AI Functionality (Enhanced Computing)</th>
+              <td class="border-bottom-0"><strong>8-Core High-Performance CPU</strong></td>
+            </tr>
+            <tr>
+              <th scope="row" class="border-bottom-0">Intelligent Side-Follow System (Robot matches your speed and stays with you)</th>
+              <td class="border-bottom-0"><strong>Yes</strong></td>
+            </tr>
+            <tr>
+              <th scope="row" class="border-bottom-0">Max Payload (approx.)</th>
+              <td class="border-bottom-0">22 lb</td>
+            </tr>
+            <tr>
+              <th scope="row" class="border-bottom-0">Warranty</th>
+              <td class="border-bottom-0">1 year</td>
+            </tr>
+            <tr>
+              <th scope="row" class="border-bottom-0">Battery Power / Battery Life</th>
+              <td class="border-bottom-0">15,000 mAh / upto 4 hrs</td>
+            </tr>
+            <tr>
+              <th scope="row" class="border-bottom-0">Foot-End Force Sensor</th>
+              <td class="border-bottom-0">No - Edu model only</td>
+            </tr>
+            <tr>
+              <th scope="row" class="border-bottom-0">Secondary Development Support with High Computing Power Module</th>
+              <td class="border-bottom-0">No - Edu model only</td>
+            </tr>
+            <tr>
+              <th scope="row" class="border-bottom-0">Charger</th>
+              <td class="border-bottom-0">33.6V 3.5A</td>
+            </tr>
+          </tbody>
+          </table> -->
         </div>
 
         <!-- 	HIDDEN TABLE	 -->
@@ -448,6 +574,9 @@ if ( ! empty ( $table ) ) {
     </div>
 
 </div>
+
+<!-- SPEC TABLE END -->
+
 <div class="experience section-4">
     <div class="container">
         <div class="row justify-content-center text-left mtb-50">
