@@ -439,12 +439,12 @@ if ( $slug ) {
                 </div>
                 <div class="col-lg-4">
                     <div class="single-apps-screen">
-                        <img class="img-fluid" src="https://toborlife.ai/dev/wp-content/uploads/2025/01/123-46.png" alt="Extra Foot Pads">
+                        <img class="img-fluid" src="https://toborlife.ai/wp-content/uploads/2025/01/hd-image-quality.png" alt="Extra Foot Pads">
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="single-apps-screen">
-                        <img class="img-fluid" src="https://toborlife.ai/dev/wp-content/uploads/2025/01/123-46.png" alt="Extra Foot Pads">
+                        <img class="img-fluid" src="https://toborlife.ai/wp-content/uploads/2025/01/geographic-programming.png" alt="Extra Foot Pads">
                     </div>
                 </div>
         </div>
@@ -508,7 +508,7 @@ if ( $slug ) {
                             <p>Use the Home Dog to patrol & inspect areas of concern. Detects anomalies and notifies you immediately. Its size and mobility allows it to access most areas. </p>
                         </div>
                         <div class="tobor-right">
-                        <img class="img-fluid" src="https://toborlife.ai/dev/wp-content/uploads/2025/01/patrol_station.png" alt="image">
+                        <img class="img-fluid" src="https://toborlife.ai/wp-content/uploads/2025/01/patrol_station.png" alt="image">
                         </div>
                     </div>
                     <div id="section3" class="tobor-section">
@@ -517,7 +517,7 @@ if ( $slug ) {
                             <p>Gather people to your business or booth using the Home Dog. Catches people’s attention & effortlessly brings them over to you. </p>
                         </div>
                         <div class="tobor-right">
-                        <img class="img-fluid" src="https://toborlife.ai/dev/wp-content/uploads/2025/01/promote-business.png" alt="image">
+                        <img class="img-fluid" src="https://toborlife.ai/wp-content/uploads/2025/01/crowd-attracts.png" alt="image">
                         </div>
                     </div>
                     <div id="section4" class="tobor-section">
@@ -526,7 +526,7 @@ if ( $slug ) {
                             <p>Boost social media engagement with the Home Dog. Get people curious about your brand & attract social media users to your page.</p>
                         </div>
                         <div class="tobor-right">
-                        <img class="img-fluid" src="https://toborlife.ai/dev/wp-content/uploads/2025/01/promote-business.png" alt="image">
+                        <img class="img-fluid" src="https://toborlife.ai/wp-content/uploads/2025/01/visibility-social-media.png" alt="image">
                         </div>
                     </div>
                     <div id="section5" class="tobor-section">
@@ -535,7 +535,7 @@ if ( $slug ) {
                             <p>Use the Home Dog to deliver items for you. Carries up to 22 pounds on its back to help deliver what you need. </p>
                         </div>
                         <div class="tobor-right">
-                        <img class="img-fluid" src="https://toborlife.ai/dev/wp-content/uploads/2025/01/promote-business.png" alt="image">
+                        <img class="img-fluid" src="https://toborlife.ai/wp-content/uploads/2025/01/deliveries.png" alt="image">
                         </div>
                     </div>
                     <div id="section6" class="tobor-section">
@@ -544,7 +544,7 @@ if ( $slug ) {
                             <p>Make use of the Home Dog for business opportunities at events or large gatherings. Perform in front of kids with the Home Dog or rent them out for other businesses to make extra income. </p>
                         </div>
                         <div class="tobor-right">
-                        <img class="img-fluid" src="https://toborlife.ai/dev/wp-content/uploads/2025/01/promote-business.png" alt="image">
+                        <img class="img-fluid" src="https://toborlife.ai/wp-content/uploads/2025/01/business-opportunities.png" alt="image">
                         </div>
                     </div>
                 
@@ -629,48 +629,58 @@ if ( $slug ) {
         </div>
     </div>
 </div>
+
+<!-- SPEC TABLE -->
+
 <div class="width-container-pro section-3 table-chart-1  product-specification">
     <div class="only-desktop">
         <div class="container">
             <?php 
-$table = get_field( 'specs_table' );
+                $table = get_field( 'specs_table' );
 
-if ( ! empty ( $table ) ) {
-	echo '<table class="table">';
-	echo '<tbody>';
-	$strong = 0;
-	foreach ( $table['body'] as $tr ) {
-		echo '<tr>';
-		$count = 0; // Initialize a counter for each row
-		foreach ( $tr as $td ) {
-			if ($count == 0) {
-				echo '<th>';
-			} else {
-				$strong++;
-				if ($strong <= 4) {
-					echo '<td><strong>';
-				} else {
-			echo '<td>';
-				}
-			}
-			echo $td['c'];
-			if ($count == 0) {
-				echo '</th>';
-			} else {
-				if ($strong <= 4) {
-					echo '</strong></td>';
-				} else {
-			echo '</td>';
-				}
-			}
-			$count++; // Increment the counter
-		}
-		echo '</tr>';
-	}
-	echo '<tr><td colspan="4"><br>*Voice function includes offline voice interaction, commands, intercom and music play.</td></tr></tbody>';
-	echo '</table>';
-}
-?>
+                if (!empty($table)) {
+                    echo '<table class="table">';
+                    echo '<tbody>';
+                    $strong = 0;
+                    $row_count = 0;
+                    foreach ($table['body'] as $tr) {
+                        $row_class = ($row_count % 2 == 0) ? 'even-row' : 'odd-row';
+                        echo '<tr class="' . $row_class . '">';
+                        $count = 0; // Initialize a counter for each row
+                        foreach ($tr as $td) {
+                            if ($count == 0) {
+                                echo '<th class="border-bottom-0">';
+                            } else {
+                                $strong++;
+                                if ($strong <= 4) {
+                                    echo '<td class="border-bottom-0">';
+                                } else {
+                                    echo '<td class="border-bottom-0">';
+                                }
+                            }
+                            echo $td['c'];
+                            if ($count == 0) {
+                                echo '</th>';
+                            } else {
+                                if ($strong <= 4) {
+                                    echo '</td>';
+                                } else {
+                                    echo '</td>';
+                                }
+                            }
+                            $count++; 
+                        }
+                        echo '</tr>';
+                        $row_count++; 
+                    }
+                    
+                    // Add the final note row with appropriate even/odd class
+                    $final_row_class = ($row_count % 2 == 0) ? 'even-row' : 'odd-row';
+                    echo '<tr class="' . $final_row_class . '"><td colspan="4" class="border-bottom-0"><br>*Voice function includes offline voice interaction, commands, intercom and music play.</td></tr>';
+                    echo '</tbody>';
+                    echo '</table>';
+                }
+            ?>
 
             <!--             <table class="table table-striped ">
               <thead>
@@ -786,34 +796,51 @@ if ( ! empty ( $table ) ) {
         </div>
         <div class="table-responsive-first" id="pro-first-table1">
             <?php 
-$table = get_field( 'specs_table' );
+                $table = get_field( 'specs_table' );
 
-if ( ! empty ( $table ) ) {
-	echo '<table class="table table-striped table-hover mb-0">';
-	echo '<tbody>';
-	foreach ( $table['body'] as $tr ) {
-		echo '<tr>';
-		$count = 0; // Initialize a counter for each row
-		foreach ( $tr as $td ) {
-			if ($count == 0) {
-				echo '<th scope="row" class="border-bottom-0">';
-			} else {
-				echo '<td class="border-bottom-0"><strong>';
-			}
-			echo $td['c'];
-			if ($count == 0) {
-				echo '</th>';
-			} else {
-				echo '</strong></td>';
-			}
-			$count++; // Increment the counter
-		}
-		echo '</tr>';
-	}
-	echo '</tbody>';
-	echo '</table>';
-}
-?>
+                if (!empty($table)) {
+                    echo '<table class="table">';
+                    echo '<tbody>';
+                    $strong = 0;
+                    $row_count = 0;
+                    foreach ($table['body'] as $tr) {
+                        $row_class = ($row_count % 2 == 0) ? 'even-row' : 'odd-row';
+                        echo '<tr class="' . $row_class . '">';
+                        $count = 0; // Initialize a counter for each row
+                        foreach ($tr as $td) {
+                            if ($count == 0) {
+                                echo '<th class="border-bottom-0">';
+                            } else {
+                                $strong++;
+                                if ($strong <= 4) {
+                                    echo '<td class="border-bottom-0">';
+                                } else {
+                                    echo '<td class="border-bottom-0">';
+                                }
+                            }
+                            echo $td['c'];
+                            if ($count == 0) {
+                                echo '</th>';
+                            } else {
+                                if ($strong <= 4) {
+                                    echo '</td>';
+                                } else {
+                                    echo '</td>';
+                                }
+                            }
+                            $count++; 
+                        }
+                        echo '</tr>';
+                        $row_count++; 
+                    }
+                    
+                    // Add the final note row with appropriate even/odd class
+                    $final_row_class = ($row_count % 2 == 0) ? 'even-row' : 'odd-row';
+                    echo '<tr class="' . $final_row_class . '"><td colspan="4" class="border-bottom-0"><br>*Voice function includes offline voice interaction, commands, intercom and music play.</td></tr>';
+                    echo '</tbody>';
+                    echo '</table>';
+                }
+                ?>
             <!--           <table class="table table-striped table-hover mb-0">
             <tbody>
               <tr>
@@ -917,6 +944,11 @@ if ( ! empty ( $table ) ) {
     </div>
 
 </div>
+
+<!-- SPEC TABLE END -->
+
+<!-- EXPERIENCE SECTION START -->
+
 <div class="experience section-4">
     <div class="container">
         <div class="row justify-content-center text-left mtb-50">
