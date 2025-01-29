@@ -225,23 +225,25 @@ a.tobor-nav-item:hover {
 
 }
 
-
 /* RESPONSIVE CODES FOR BUSINESS APPLICATION AREA END  */
 
 .woocommerce-product-gallery__image > a > img {
     display: block;
-    max-width: 100% !important;
+    max-width: 90% !important;
     height: auto;
     box-shadow: none;
     margin: 0 auto;
 }
 .woocommerce-product-thumbnail > a > img {
-    width: 450px !important;
+    width: 100px !important;
 }
+
 .woocommerce-product-thumbnails {
     margin-right: 40px;
 }
-
+.woocommerce-product-gallery__image {
+    float: none !important;
+}
 button.single_feature_button {
     display: none;
 }
