@@ -664,7 +664,7 @@
             <?php $args = array(
                   'post_type' => 'product',
                   'post_status' => 'publish',
-                  'posts_per_page' => 6,
+                  'posts_per_page' => 30,
                   'orderby' => 'rand',
                   'tax_query' => array( array(
                       'taxonomy'         => 'product_cat',
