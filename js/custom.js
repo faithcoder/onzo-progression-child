@@ -66,26 +66,39 @@ jQuery(document).ready(function ($) {
 document.addEventListener('DOMContentLoaded', function() {
     const variationBtns = document.querySelectorAll('.variation-selector-btn');
     
+  
+    const defaultBtn = variationBtns[0];
+    if (defaultBtn) {
+        defaultBtn.classList.add('active');
+        const defaultVariationData = JSON.parse(defaultBtn.dataset.variation);
+        updateProductDisplay(defaultVariationData);
+    }
+    
     variationBtns.forEach(btn => {
         btn.addEventListener('click', function() {
-            // Remove active class from all buttons
+          
             variationBtns.forEach(b => b.classList.remove('active'));
-            // Add active class to clicked button
+          
             this.classList.add('active');
             
             const variationData = JSON.parse(this.dataset.variation);
-            
-            // Update content
-            document.querySelector('.tobor-product-title').innerHTML = variationData.title_html;
-            document.querySelector('#variation-description').textContent = variationData.description;
-            document.querySelector('.variation_price').innerHTML = variationData.price_html;
-            document.querySelector('input[name="variation_id"]').value = variationData.variation_id;
-            
-            // Update Affirm price
-            const affirmElement = document.querySelector('.affirm-as-low-as');
-            if (affirmElement) {
-                affirmElement.setAttribute('data-amount', variationData.display_price + '00');
-            }
+            updateProductDisplay(variationData);
         });
     });
+    
+   
+    function updateProductDisplay(variationData) {
+        document.querySelector('.tobor-product-title').innerHTML = variationData.title_html;
+        const description = variationData.description.replace(/<\/?p>/g, '');
+        document.querySelector('#variation-description').innerHTML = description;
+        document.querySelector('.variation_price').innerHTML = variationData.price_html;
+        document.querySelector('input[name="variation_id"]').value = variationData.variation_id;
+        
+        const affirmElement = document.querySelector('.affirm-as-low-as');
+        if (affirmElement) {
+            affirmElement.setAttribute('data-amount', variationData.display_price + '00');
+        }
+    }
+
+
 });
