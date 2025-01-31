@@ -65,8 +65,7 @@ jQuery(document).ready(function ($) {
 
 document.addEventListener('DOMContentLoaded', function() {
     const variationBtns = document.querySelectorAll('.variation-selector-btn');
-    
-  
+
     const defaultBtn = variationBtns[0];
     if (defaultBtn) {
         defaultBtn.classList.add('active');
@@ -99,6 +98,5 @@ document.addEventListener('DOMContentLoaded', function() {
             affirmElement.setAttribute('data-amount', variationData.display_price + '00');
         }
     }
-
 
 });
