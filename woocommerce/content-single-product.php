@@ -36,32 +36,34 @@ $variations = $product->is_type('variable') ? $product->get_available_variations
 
                     <?php if ($product->is_type('variable')): ?>
                         <div class="variation-buttons-wrapper mb-4">
-                            <?php 
-                            $default_variation = $variations[0];
-                            $default_price_html = wc_get_product($default_variation['variation_id'])->get_price_html();
-                            foreach ($variations as $index => $variation) {
-                                $model = get_post_meta($variation['variation_id'], '_model', true);
-                                $title_html = '';
-                                foreach ($variation['attributes'] as $attribute) {
-                                    $title_html .= esc_html($attribute);
-                                }
-                                $title_html .= esc_html($model);
+                            <div class="variation-grid">
+                                <?php 
+                                $default_variation = $variations[0];
+                                $default_price_html = wc_get_product($default_variation['variation_id'])->get_price_html();
+                                foreach ($variations as $index => $variation) {
+                                    $model = get_post_meta($variation['variation_id'], '_model', true);
+                                    $title_html = '';
+                                    foreach ($variation['attributes'] as $attribute) {
+                                        $title_html .= esc_html($attribute);
+                                    }
+                                    $title_html .= esc_html($model);
 
-                                $variation_data = htmlspecialchars(json_encode([
-                                    'description'   => $variation['variation_description'],
-                                    'price_html'    => $variation['price_html'],
-                                    'variation_id'  => $variation['variation_id'],
-                                    'display_price' => $variation['display_price'],
-                                    'title_html'    => $title_html,
-                                    'model'         => $model
-                                ]), ENT_QUOTES, 'UTF-8');
-                                $active_class = ($index === 0) ? 'active' : '';
-                                ?>
-                                <button class="variation-selector-btn <?php echo $active_class; ?>" 
-                                    data-variation='<?php echo $variation_data; ?>'>
-                                    <?php echo $attribute; ?>
-                                </button>
-                            <?php } ?>
+                                    $variation_data = htmlspecialchars(json_encode([
+                                        'description'   => $variation['variation_description'],
+                                        'price_html'    => $variation['price_html'],
+                                        'variation_id'  => $variation['variation_id'],
+                                        'display_price' => $variation['display_price'],
+                                        'title_html'    => $title_html,
+                                        'model'         => $model
+                                    ]), ENT_QUOTES, 'UTF-8');
+                                    $active_class = ($index === 0) ? 'active' : '';
+                                    ?>
+                                    <button class="variation-selector-btn <?php echo $active_class; ?>" 
+                                        data-variation='<?php echo $variation_data; ?>'>
+                                        <?php echo $attribute; ?>
+                                    </button>
+                                <?php } ?>
+                            </div>
                         </div>
                     <?php endif; ?>
                     <form class="<?php echo $product->is_type('variable') ? 'variations_form' : ''; ?> cart" 
