@@ -99,6 +99,9 @@ h1.apps-screenshot-title {}
     .whats-in-the-box-image-left {
         min-height: 290px;
     }
+    .single-accessories {
+        padding: 3px;
+      }
 }
 
 /* BUSINESS APPLICATION AREA */
