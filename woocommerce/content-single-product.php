@@ -18,7 +18,7 @@ $variations = $product->is_type('variable') ? $product->get_available_variations
                         </div>
                     </div>
                 </div>
-                <div class="productInformation col-lg-6 col-md-12 ps-5">
+                <div class="productInformation col-lg-6 col-md-12 ps-2">
                     <?php if ($product->is_type('variable')): ?>
                         <?php 
                         foreach ($variations[0]['attributes'] as $attribute):

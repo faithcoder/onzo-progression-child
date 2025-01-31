@@ -464,7 +464,7 @@ input[type="number"] {
         padding: 10px !important;
       }
       .woocommerce-product-thumbnail > a > img {
-        width: 400px !important;
+        width: 60px !important;
       }
       .woocommerce-product-thumbnails {
         margin-right: 30px;
