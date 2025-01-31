@@ -69,12 +69,12 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="single-apps-screen">
-                        <img class="img-fluid" src="https://toborlife.ai/dev/wp-content/uploads/2025/01/123-46.png" alt="Extra Foot Pads">
+                        <img class="img-fluid" src="https://toborlife.ai/wp-content/uploads/2025/01/hd-image-quality.png" alt="Extra Foot Pads">
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="single-apps-screen">
-                        <img class="img-fluid" src="https://toborlife.ai/dev/wp-content/uploads/2025/01/123-46.png" alt="Extra Foot Pads">
+                        <img class="img-fluid" src="https://toborlife.ai/wp-content/uploads/2025/01/geographic-programming.png" alt="Extra Foot Pads">
                     </div>
                 </div>
         </div>
