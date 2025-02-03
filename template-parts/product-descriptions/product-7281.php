@@ -36,13 +36,13 @@
                     </div>
                     <div class="col-md-4 col-sm-4 col-4">
                         <div class="single-accessories">
-                            <p class="single-accessories-name">Extra Foot Pads</p>
+                            <p class="single-accessories-name">Battery</p>
                             <img class="img-fluid" src="https://toborlife.ai/dev/wp-content/uploads/2025/01/image-173.png" alt="Extra Foot Pads">
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-4 col-4">
                         <div class="single-accessories">
-                            <p class="single-accessories-name">Battery Charger</p>
+                            <p class="single-accessories-name">Battery Charger Fast-Charge</p>
                             <img class="img-fluid" src="https://toborlife.ai/dev/wp-content/uploads/2025/01/image-charger.png" alt="Extra Foot Pads">
                         </div>
                     </div>
@@ -84,107 +84,6 @@
 
 
     <!---------------------WHAT YOU GET PANEL NEW END------------------------------>
-
-
-    <!-- BUSINESS APPLICATION AREA START -->
-    <div class="bussines-application-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1>Business Applications</h1>
-                    <p>Having a robot dog brings business opportunities. Get a leg up in the competition, actually 4 legs up! Promote your business, patrol & inspect areas, attract crowds, boost your social media presence, make deliveries, and more.</p>
-                </div>
-            </div>
-            <div class="row">
-                <!-- Navigation -->
-                <div class="tobor-nav-wrapper">
-                    <nav class="tobor-nav">
-                        <ul class="tobor-nav-list">
-                            <li><a href="#section1" class="tobor-nav-item">Promote Your <br> Business</a></li>
-                            <li><a href="#section2" class="tobor-nav-item">Patrol & <br> Inspection </a></li>
-                            <li><a href="#section3" class="tobor-nav-item">Attract <br> Crowds</a></li>
-                            <li><a href="#section4" class="tobor-nav-item">Increase Visibility on <br> Social Media</a></li>
-                            <li><a href="#section5" class="tobor-nav-item">Deliveries</a></li>
-                            <li><a href="#section6" class="tobor-nav-item">Business <br> Opportunities</a></li>
-                        </ul>
-                    </nav>
-                    <nav class="tobor-nav-mobile">
-                        <ul class="tobor-nav-list-mobile">
-                            <li><a href="#section1" class="tobor-nav-item">Promote Your <br> Business</a></li>
-                            <li><a href="#section2" class="tobor-nav-item">Patrol & <br> Inspection </a></li>
-                            <li><a href="#section3" class="tobor-nav-item">Attract <br> Crowds</a></li>
-                        </ul>
-                        <ul class="tobor-nav-list-mobile">
-                            <li><a href="#section4" class="tobor-nav-item">Increase Visibility on <br> Social Media</a></li>
-                            <li><a href="#section5" class="tobor-nav-item">Deliveries</a></li>
-                            <li><a href="#section6" class="tobor-nav-item">Business <br> Opportunities</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <!-- Sections -->
-                <div class="tobor-sections">
-                    <div id="section1" class="tobor-section">
-                        <div class="tobor-left">
-                            <h2>Promote Your Business</h2>
-                            <p>Bring customers to your business with the Home Dog. Greet guests, provide information on products or services, or have it hand out promotional material.</p>
-                        </div>
-                        <div class="tobor-right">
-                        <img class="img-fluid" src="https://toborlife.ai/dev/wp-content/uploads/2025/01/promote-business.png" alt="image">
-                        </div>
-                    </div>
-                    <div id="section2" class="tobor-section">
-                        <div class="tobor-left">
-                            <h2>Patrol & Inspection</h2>
-                            <p>Use the Home Dog to patrol & inspect areas of concern. Detects anomalies and notifies you immediately. Its size and mobility allows it to access most areas. </p>
-                        </div>
-                        <div class="tobor-right">
-                        <img class="img-fluid" src="https://toborlife.ai/wp-content/uploads/2025/01/patrol_station.png" alt="image">
-                        </div>
-                    </div>
-                    <div id="section3" class="tobor-section">
-                        <div class="tobor-left">
-                            <h2>Attract Crowds</h2>
-                            <p>Gather people to your business or booth using the Home Dog. Catches people’s attention & effortlessly brings them over to you. </p>
-                        </div>
-                        <div class="tobor-right">
-                        <img class="img-fluid" src="https://toborlife.ai/wp-content/uploads/2025/01/crowd-attracts.png" alt="image">
-                        </div>
-                    </div>
-                    <div id="section4" class="tobor-section">
-                        <div class="tobor-left">
-                            <h2>Increase Visibility on Social Media</h2>
-                            <p>Boost social media engagement with the Home Dog. Get people curious about your brand & attract social media users to your page.</p>
-                        </div>
-                        <div class="tobor-right">
-                        <img class="img-fluid" src="https://toborlife.ai/wp-content/uploads/2025/01/visibility-social-media.png" alt="image">
-                        </div>
-                    </div>
-                    <div id="section5" class="tobor-section">
-                        <div class="tobor-left">
-                            <h2>Deliveries</h2>
-                            <p>Use the Home Dog to deliver items for you. Carries up to 22 pounds on its back to help deliver what you need. </p>
-                        </div>
-                        <div class="tobor-right">
-                        <img class="img-fluid" src="https://toborlife.ai/wp-content/uploads/2025/01/deliveries.png" alt="image">
-                        </div>
-                    </div>
-                    <div id="section6" class="tobor-section">
-                        <div class="tobor-left">
-                            <h2>Business Opportunities</h2>
-                            <p>Make use of the Home Dog for business opportunities at events or large gatherings. Perform in front of kids with the Home Dog or rent them out for other businesses to make extra income. </p>
-                        </div>
-                        <div class="tobor-right">
-                        <img class="img-fluid" src="https://toborlife.ai/wp-content/uploads/2025/01/business-opportunities.png" alt="image">
-                        </div>
-                    </div>
-                
-                </div>       
-            </div>
-        </div>
-    </div>
-
-    <!-- BUSINESS APPLICATION AREA END -->
-
 
  
 <div class="interaction-section section-2" id="features">
@@ -653,10 +552,23 @@
     </div>
 </div>
 
+<div class="product-contact-form">
+    <div class="container">
+        <div class="product-form-area">
+            <div class="form-title-area text-center">
+                <h1 class="">Contact Us</h1>
+                <h4>Got questions? Like a demo?</h4>
+            </div>
+            <?php 
+                echo do_shortcode('[gravityform id="12" title="true"]');
+            ?>
+        </div>
+    </div>
+</div>
 
 <!-- Accessories Slider start -->
 
-<div class="section-6 pb-5">
+<div class="section-6 pb-5 pt-3">
     <div class="container">
         <div class="mtb-50">
             <h4 class="font_30 font800">Accessories</h4>

@@ -218,9 +218,66 @@ h2.blog-cta-title {
 }
 
 
-
-
 .variation-selector-btn b {
     display: block;
     line-height: 1.2;
+}
+
+/*product contact form styles*/
+
+/*product contact form styles*/
+
+div#gform_fields_12 input::placeholder {
+    color: #666 !important;
+    font-size: 20px;
+    font-family: helvetica;
+    font-weight: 400;
+    
+}
+div#gform_fields_12 input{
+    background-color: transparent !important;
+    border-bottom: 1px solid #c5c5c5;
+    border-radius: 0 !important;
+    width: 100%;
+    padding: 10px 0;
+    color: #666 !important;
+    font-size: 20px;
+}
+div#gform_fields_12 label{
+    color: #666 !important;
+    font-weight: 400 !important;
+}
+.form-title-area > h1 {
+    font-size: 50px;
+    font-weight: 700;
+    color: #0F0F10;
+}
+.form-title-area > h4 {
+    font-size: 26px;
+    font-weight: 400;
+    color: #0F0F10;
+    line-height: 42px;
+}
+input#gform_submit_button_12 {
+    margin: 0 auto !important;
+    margin-top: 20px !important;
+}
+textarea#input_12_14 {
+    border: 1px solid #cfcfcf;
+}
+.product-contact-form {
+    max-width: 50%;
+    margin: 0 auto;
+}
+.product-contact-form {
+    padding 100px 0;
+}
+input#input_12_10 {
+    width: 90% !important;
+}
+@media (max-width: 1024px){
+    .product-contact-form {
+        max-width: 90%;
+        margin: 0 auto;
+    }
 }

@@ -283,6 +283,9 @@ button#add-to-cart- {
     box-shadow: none;
     border: 2px solid #506CCD !important;
 }
+button#add-to-cart-:hover {
+    background-color: #475FB3 !important;
+}
 
 /* BUSINESS APPLICATION AREA STYLES */
 .bussines-application-area{
