@@ -26,12 +26,12 @@ $variations = $product->is_type('variable') ? $product->get_available_variations
                         endforeach;
 
                         $initial_model = get_post_meta($variations[0]['variation_id'], '_model', true);
-                        echo '<h4 class="tobor-varation-name">' . esc_html($initial_model) . '</h4>';
+                        echo '<h4 class="tobor-variation-name">' . esc_html($initial_model) . '</h4>';
                         ?>
                     <?php else: ?>
                         <h2 class="tobor-product-title"><?php echo $product->get_name(); ?></h2>
                     <?php endif; ?>
-                    
+                    <h4 class="tobor-variation-name">Unitree Go2 Pro</h4>
                     <?php echo '<p class="tobor-variation-description" id="variation-description">' . $product->get_description() . '</p>'; ?>
 
                     <?php if ($product->is_type('variable')): ?>
