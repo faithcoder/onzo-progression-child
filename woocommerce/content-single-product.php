@@ -11,6 +11,9 @@ $variations = $product->is_type('variable') ? $product->get_available_variations
     <div id="single-product-info-background">
         <div class="container">
             <div class="productInformationWrapper row justify-content-between">
+                <div class="tobor-product-badge">
+                    <img src="https://toborlife.ai/dev/wp-content/uploads/2025/02/North-American-Distributor-Badge.png" alt="">
+                </div>
                 <div class="ProductPicture col-lg-6 col-md-12">
                     <div id="single-product-info-background">
                         <div class="woocommerce woocommerce-shop-single">
@@ -24,14 +27,11 @@ $variations = $product->is_type('variable') ? $product->get_available_variations
                         foreach ($variations[0]['attributes'] as $attribute):
                             echo '<h2 class="tobor-product-title">' . esc_html($attribute) . '</h2>';
                         endforeach;
-
-                        $initial_model = get_post_meta($variations[0]['variation_id'], '_model', true);
-                        echo '<h4 class="tobor-variation-name">' . esc_html($initial_model) . '</h4>';
                         ?>
                     <?php else: ?>
                         <h2 class="tobor-product-title"><?php echo $product->get_name(); ?></h2>
                     <?php endif; ?>
-                    <h4 class="tobor-variation-name">Unitree Go2 Pro</h4>
+                    
                     <?php echo '<p class="tobor-variation-description" id="variation-description">' . $product->get_description() . '</p>'; ?>
 
                     <?php if ($product->is_type('variable')): ?>

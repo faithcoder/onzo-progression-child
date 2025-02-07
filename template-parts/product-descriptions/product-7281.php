@@ -3,14 +3,9 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="whats-in-the-box-text">
-                    <h1 class="text-center">What’s in the box?</h1>
+                    <h1 class="text-center"><?php the_field('whats_in_the_box_title'); ?></h1>
                     <div class="whats-in-the-box-list">
-                        <ul>
-                            <li>Home Robot Dog (Unitree GO2) with extra foot pads, and stand</li>
-                            <li>Beautiful luggage case to transport dog with handle and wheels</li>
-                            <li>Battery charger, pocket-sized remote control* (plus & ultra only)</li>
-                            <li>Android/IOS App for robot control, programming, photo/video, tutorial videos, reference guide, and much more</li>
-                        </ul>
+                        <?php the_field('whats_in_the_box_description'); ?>
                     </div>
                 </div>
             </div>
@@ -19,10 +14,10 @@
             <div class="col-lg-6 col-md-12 col-sm-12">
                 <div class="whats-in-the-box-image-left">
                     <div class="col-lg-6 col-md-6 col-sm-6 col-6">
-                        <img class="img-fluid" src="https://toborlife.ai/dev/wp-content/uploads/2025/01/IMG_0224-1.png" alt="Extra Foot Pads">
+                        <img class="img-fluid" src="<?php the_field('box_dual_image_one'); ?>" alt="Extra Foot Pads">
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 col-6">
-                        <img class="img-fluid" src="https://toborlife.ai/dev/wp-content/uploads/2025/01/IMG_0222-1.png" alt="Extra Foot Pads">
+                        <img class="img-fluid" src="<?php the_field('box_dual_image_two'); ?>" alt="Extra Foot Pads">
                     </div>
                 </div>
             </div>
@@ -30,28 +25,28 @@
                 <div class="row">
                     <div class="col-md-4 col-sm-4 col-4">
                         <div class="single-accessories">
-                            <p class="single-accessories-name">Full-sized remote control</p>
-                            <img class="img-fluid" src="https://toborlife.ai/dev/wp-content/uploads/2025/01/image-101.png" alt="Extra Foot Pads">
+                            <p class="single-accessories-name"><?php the_field('quad_box_tools_label_one'); ?></p>
+                            <img class="img-fluid" src="<?php the_field('quad_box_tools_image_one'); ?>" alt="Extra Foot Pads">
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-4 col-4">
                         <div class="single-accessories">
-                            <p class="single-accessories-name">Battery</p>
-                            <img class="img-fluid" src="https://toborlife.ai/dev/wp-content/uploads/2025/01/image-173.png" alt="Extra Foot Pads">
+                            <p class="single-accessories-name"><?php the_field('quad_box_tools_label_two'); ?></p>
+                            <img class="img-fluid" src="<?php the_field('quad_box_tools_image_two'); ?>" alt="Extra Foot Pads">
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-4 col-4">
                         <div class="single-accessories">
-                            <p class="single-accessories-name">Battery Charger Fast-Charge</p>
-                            <img class="img-fluid" src="https://toborlife.ai/dev/wp-content/uploads/2025/01/image-charger.png" alt="Extra Foot Pads">
+                            <p class="single-accessories-name"><?php the_field('quad_box_tools_label_three'); ?></p>
+                            <img class="img-fluid" src="<?php the_field('quad_box_tools_image_three'); ?>" alt="Extra Foot Pads">
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
                         <div class="whats-in-the-box-image-right">
-                            <p class="single-accessories-name">Home Robot Dog with extra foot pads, and stand</p>
-                            <img class="img-fluid" src="https://toborlife.ai/dev/wp-content/uploads/2025/01/image-183.png" alt="Extra Foot Pads">
+                            <p class="single-accessories-name"><?php the_field('quad_box_tools_label_four'); ?></p>
+                            <img class="img-fluid" src="<?php the_field('quad_box_tools_image_four'); ?>" alt="Extra Foot Pads">
                         </div>
                     </div>
                 </div>
@@ -60,28 +55,27 @@
         <div class="apps-screenshot-area">
         <div class="row">  
             <div class="col-lg-12">
-                <h3 class="apps-screenshot-title text-center">IOS/Android App</h3>
+                <h3 class="apps-screenshot-title text-center"><?php echo the_field('app_screen')['app_screen_title']; ?></h3>
             </div>
             <div class="col-lg-4">
                     <div class="single-apps-screen">
-                        <img class="img-fluid" src="https://toborlife.ai/dev/wp-content/uploads/2025/01/123-46.png" alt="Extra Foot Pads">
+                        <img class="img-fluid" src="<?php the_field('app_screen_image_one'); ?>" alt="Extra Foot Pads">
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="single-apps-screen">
-                        <img class="img-fluid" src="https://toborlife.ai/wp-content/uploads/2025/01/hd-image-quality.png" alt="Extra Foot Pads">
+                        <img class="img-fluid" src="<?php the_field('app_screen_image_two'); ?>" alt="Extra Foot Pads">
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="single-apps-screen">
-                        <img class="img-fluid" src="https://toborlife.ai/wp-content/uploads/2025/01/geographic-programming.png" alt="Extra Foot Pads">
+                        <img class="img-fluid" src="<?php the_field('app_screen_image_three'); ?>" alt="Extra Foot Pads">
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 
     <!---------------------WHAT YOU GET PANEL NEW END------------------------------>
 

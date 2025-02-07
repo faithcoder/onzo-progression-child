@@ -270,7 +270,7 @@ textarea#input_12_14 {
     margin: 0 auto;
 }
 .product-contact-form {
-    padding 100px 0;
+    padding: 100px 0;
 }
 input#input_12_10 {
     width: 90% !important;
@@ -280,4 +280,8 @@ input#input_12_10 {
         max-width: 90%;
         margin: 0 auto;
     }
+}
+
+#boxed-layout-pro {
+    margin-top: 127px;
 }

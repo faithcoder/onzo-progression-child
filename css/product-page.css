@@ -62,6 +62,7 @@
     background-color: #F5F5F7;
     text-align: center;
     max-height: 170px;
+    min-height: 170px;
 }
 .single-accessories > p {
     margin-bottom: 5px;
@@ -230,6 +231,15 @@ a.tobor-nav-item:hover {
 
 /* RESPONSIVE CODES FOR BUSINESS APPLICATION AREA END  */
 
+.productInformationWrapper{
+    position: relative;
+}
+.tobor-product-badge img {
+    max-width: 90px;
+    position: absolute;
+    right: 30px;
+    top: 30px;
+}
 .woocommerce-product-gallery__image > a > img {
     display: block;
     max-width: 90% !important;
@@ -246,6 +256,7 @@ a.tobor-nav-item:hover {
 }
 .woocommerce-product-gallery__image {
     float: none !important;
+    margin-top: 20px;
 }
 button.single_feature_button {
     display: none;
@@ -268,7 +279,7 @@ ol.flex-control-thumbs {
 /* PRODUCT INFO SECTION STYLES */
 .productInformationWrapper.row.justify-content-between {
     background: #F5F5F7;
-    padding: 70px 0px 0px 20px;
+    padding: 70px 0px 50px 20px;
     border-radius: 20px;
     margin-top: 50px;
 }
@@ -492,6 +503,13 @@ input[type="number"] {
       .whats-in-the-box-image-right {
         margin: 15px 15px;
       }
+    .tobor-product-badge img {
+        max-width: 60px;
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        z-index: 1;
+    }
 
 }
 
@@ -505,27 +523,17 @@ input[type="number"] {
     color: #595959 !important;
 }
 
-.variation-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 10px; 
-    margin-top: 20px;
-}
-
 .variation-selector-btn {
     width: 100%; 
 }
 /* trying code */
 
 .variation-buttons-wrapper {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-bottom: 2rem;
+    
 }
 
 .variation-selector-btn {
-    padding: 7px 20px;
+    padding: 7px 16px;
     border: 1px solid #475FB3;
     background: transparent;
     border-radius: 50px;
@@ -543,4 +551,20 @@ input[type="number"] {
     border-color: #475FB3;
     background: #475FB3;
     color: #fff;
+}
+
+.variation-grid {
+    display: flex;
+    gap: 10px;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+@media  (max-width: 1024px) {
+    .variation-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 10px; 
+        margin-top: 20px;
+    }
 }
