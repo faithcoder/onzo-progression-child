@@ -5,6 +5,12 @@
                 <div class="whats-in-the-box-text">
                     <h1 class="text-center"><?php the_field('whats_in_the_box_title'); ?></h1>
                     <div class="whats-in-the-box-list">
+                        <!--<ul>-->
+                        <!--    <li>Home Robot Dog (Unitree GO2) with extra foot pads, and stand</li>-->
+                        <!--    <li>Beautiful luggage case to transport dog with handle and wheels</li>-->
+                        <!--    <li>Battery charger, pocket-sized remote control* (plus & ultra only)</li>-->
+                        <!--    <li>Android/IOS App for robot control, programming, photo/video, tutorial videos, reference guide, and much more</li>-->
+                        <!--</ul>-->
                         <?php the_field('whats_in_the_box_description'); ?>
                     </div>
                 </div>
@@ -55,7 +61,7 @@
         <div class="apps-screenshot-area">
         <div class="row">  
             <div class="col-lg-12">
-                <h3 class="apps-screenshot-title text-center"><?php echo the_field('app_screen')['app_screen_title']; ?></h3>
+                <h3 class="apps-screenshot-title text-center"><?php the_field('app_screen_title'); ?></h3>
             </div>
             <div class="col-lg-4">
                     <div class="single-apps-screen">
@@ -76,6 +82,7 @@
         </div>
     </div>
 </div>
+
 
     <!---------------------WHAT YOU GET PANEL NEW END------------------------------>
 
@@ -137,7 +144,7 @@
                 </div>
             </div>
         </div>
-        <div class="row mtb-80 mb-5">
+        <div class="row mtb-80">
             <div class="col-md-6 cust-order-md-1 p-relative">
                 <div class="video-section width-87">
                     <video class="border-r-25" playsinline="" loop="loop" autoplay="autoplay" muted="muted"

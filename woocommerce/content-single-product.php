@@ -11,9 +11,11 @@ $variations = $product->is_type('variable') ? $product->get_available_variations
     <div id="single-product-info-background">
         <div class="container">
             <div class="productInformationWrapper row justify-content-between">
+                
                 <div class="tobor-product-badge">
                     <img src="https://toborlife.ai/dev/wp-content/uploads/2025/02/North-American-Distributor-Badge.png" alt="">
                 </div>
+                
                 <div class="ProductPicture col-lg-6 col-md-12">
                     <div id="single-product-info-background">
                         <div class="woocommerce woocommerce-shop-single">
@@ -22,6 +24,7 @@ $variations = $product->is_type('variable') ? $product->get_available_variations
                     </div>
                 </div>
                 <div class="productInformation col-lg-6 col-md-12 ps-2">
+                    
                     <?php if ($product->is_type('variable')): ?>
                         <?php 
                         foreach ($variations[0]['attributes'] as $attribute):
@@ -32,10 +35,12 @@ $variations = $product->is_type('variable') ? $product->get_available_variations
                         <h2 class="tobor-product-title"><?php echo $product->get_name(); ?></h2>
                     <?php endif; ?>
                     
+                    <h4 class="tobor-variation-name"><?php the_field('product_model'); ?></h4>
+                    
                     <?php echo '<p class="tobor-variation-description" id="variation-description">' . $product->get_description() . '</p>'; ?>
 
                     <?php if ($product->is_type('variable')): ?>
-                        <div class="variation-buttons-wrapper mb-4">
+                        <div class="variation-buttons-wrapper mb-1">
                             <div class="variation-grid">
                                 <?php 
                                 $default_variation = $variations[0];
@@ -58,7 +63,7 @@ $variations = $product->is_type('variable') ? $product->get_available_variations
                                     ]), ENT_QUOTES, 'UTF-8');
                                     $active_class = ($index === 0) ? 'active' : '';
                                     ?>
-                                    <button class="variation-selector-btn <?php echo $active_class; ?>" 
+                                    <button class="variation-selector-btn <?= strtolower(str_replace(' ','-',$attribute)) ?> <?php echo $active_class; ?>" 
                                         data-variation='<?php echo $variation_data; ?>'>
                                         <?php echo $attribute; ?>
                                     </button>

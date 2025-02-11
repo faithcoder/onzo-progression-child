@@ -80,10 +80,10 @@
     </div>
 </div>
 
+
     <!---------------------WHAT YOU GET PANEL NEW END------------------------------>
 
 
- 
 
  
 <div class="interaction-section section-2" id="features">
@@ -143,11 +143,12 @@
                 </div>
             </div>
         </div>
-        <div class="row mtb-80 mb-5">
+        <div class="row mtb-80">
             <div class="col-md-6 cust-order-md-1 p-relative">
-                <div class="video-section width-87">
-                    <video class="border-r-25" playsinline="" loop="loop" autoplay="autoplay" muted="muted"
-                        src="<?php the_field('enhanced_section_4_left_video_link'); ?>"></video>
+                <div class="width100 width-100">
+                    <img class="width-100"
+                        src="<?php if(!get_field("enhanced_section_2_left_image")) { echo 'https://toborlife.ai/wp-content/uploads/2024/05/two.png'; } else { the_field('enhanced_section_2_left_image'); } ?>"
+                        alt="">
                 </div>
             </div>
             <div class="col-md-6 cust-order-md-2">
@@ -470,7 +471,7 @@
 
         </div>
         <br>
-        <p class="mt-2">*Voice function includes offline voice interaction, commands, intercom and music play.</p>
+        
     </div>
 
 </div>
@@ -538,7 +539,7 @@
             <div class="col-md-6 cust-order-md-1">
                 <div class="width100">
                     <img class="border-r-25"
-                        src="<?php if(!get_field("4_left_image")) { echo 'https://toborlife.ai/wp-content/uploads/2024/05/second.jpg'; } else { the_field('experience_section-4_left_image'); } ?>"
+                        src="<?php if(!get_field("4_left_image")) { echo ''; } else { the_field('experience_section-4_left_image'); } ?>"
                         alt="">
                 </div>
             </div>

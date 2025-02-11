@@ -101,3 +101,53 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
+
+
+jQuery(document).ready(function($) {
+    // Store the original content for later restoration.
+    var originalContent = $(".whats-in-the-box-wrapper").html();
+    // Variable to hold cached content from the AJAX request.
+    var cachedContent = null;
+  
+    // Bind click events on the specified classes.
+    $(".home-dog-air, .home-dog-edu, .home-dog-pro").on('click', function(e) {
+      e.preventDefault();
+  
+      // If the clicked element is the "pro" button, restore the original content.
+      if ($(this).hasClass('home-dog-pro')) {
+        $(".whats-in-the-box-wrapper").html(originalContent);
+        return;
+      }
+  
+      // For .home-dog-air and .home-dog-edu: if content is cached, use it.
+      if (cachedContent !== null) {
+        $(".whats-in-the-box-wrapper").html(cachedContent);
+        return;
+      }
+  
+      // Otherwise, perform the AJAX request.
+      $.ajax({
+        url: "https://toborlife.ai/dev/product/go2-edu/",
+        method: "GET",
+        dataType: "html",
+        success: function(response) {
+          // Create a temporary container to hold the fetched HTML.
+          var $tempContainer = $("<div>").html(response);
+          // Extract the inner HTML of the .whats-in-the-box-wrapper element from the fetched content.
+          var newContent = $tempContainer.find(".whats-in-the-box-wrapper").html();
+          
+          if (newContent) {
+            // Cache the fetched content.
+            cachedContent = newContent;
+            // Replace the current page's .whats-in-the-box-wrapper content.
+            $(".whats-in-the-box-wrapper").html(newContent);
+          } else {
+            console.error("The specified element '.whats-in-the-box-wrapper' was not found in the response.");
+          }
+        },
+        error: function(xhr, status, error) {
+          console.error("Error fetching the content: " + error);
+        }
+      });
+    });
+  });

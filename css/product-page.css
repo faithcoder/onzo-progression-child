@@ -36,6 +36,9 @@
     border-radius: 20px;
     background-color: #F5F5F7;
     text-align: center;
+    max-height: 330px;
+    min-height: 330px;
+    overflow: hidden;
 }
 .whats-in-the-box-image-left > img
 {   display: inline-block;
@@ -45,13 +48,14 @@
 .whats-in-the-box-image-right > img
 {
     display: inline-block;
-    margin: -70px 0px auto;
+    max-width: 250px;
+    margin-top:-15px;
 }
 .single-accessories > img
 {
     display: inline-block;
     margin: 0 auto;
-    max-width: 110px;
+    max-width: 115px;
 }
 .single-accessories > img:first-child{
     margin-top: -10px;
@@ -103,6 +107,9 @@ h1.apps-screenshot-title {}
     .single-accessories {
         padding: 3px;
       }
+     .single-accessories > img {
+        max-width: 100px;
+    }
 }
 
 /* BUSINESS APPLICATION AREA */
@@ -235,7 +242,7 @@ a.tobor-nav-item:hover {
     position: relative;
 }
 .tobor-product-badge img {
-    max-width: 90px;
+    max-width: 120px;
     position: absolute;
     right: 30px;
     top: 30px;
@@ -297,7 +304,12 @@ button#add-to-cart- {
 button#add-to-cart-:hover {
     background-color: #475FB3 !important;
 }
-
+@media (max-width: 450px){
+    button#add-to-cart- {
+        padding: 10px 20px !important;
+        font-size: 16px !important;
+    }
+}
 /* BUSINESS APPLICATION AREA STYLES */
 .bussines-application-area{
     background-color: #fff;
@@ -478,7 +490,7 @@ input[type="number"] {
 
 @media all and (max-width: 767px){
     .productInformationWrapper.row.justify-content-between {
-        padding: 10px !important;
+        padding: 25px !important;
       }
       .woocommerce-product-thumbnail > a > img {
         width: 60px !important;
@@ -494,7 +506,8 @@ input[type="number"] {
         font-size: 18px !important;
         line-height: 22px;
       }
-      h3.variation_price {
+      
+      h3.variation_price span{
         font-size: 30px !important;
       }
       h4.tobor-variation-name {
@@ -533,7 +546,7 @@ input[type="number"] {
 }
 
 .variation-selector-btn {
-    padding: 7px 16px;
+    padding: 7px 20px;
     border: 1px solid #475FB3;
     background: transparent;
     border-radius: 50px;
@@ -554,10 +567,10 @@ input[type="number"] {
 }
 
 .variation-grid {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     margin-top: 1rem;
-    margin-bottom: 2rem;
 }
 
 @media  (max-width: 1024px) {
@@ -567,4 +580,9 @@ input[type="number"] {
         gap: 10px; 
         margin-top: 20px;
     }
+    
+}
+
+.product-form-area {
+  margin-bottom: 100px;
 }
