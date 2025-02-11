@@ -1,4 +1,3 @@
-
 /* WHATS IN THE BOX STYLE  */
 
 .whats-in-the-box-wrapper
@@ -51,7 +50,7 @@
     max-width: 250px;
     margin-top:-15px;
 }
-.single-accessories > img
+/* .single-accessories > img
 {
     display: inline-block;
     margin: 0 auto;
@@ -59,14 +58,66 @@
 }
 .single-accessories > img:first-child{
     margin-top: -10px;
-}
+} */
+
 .single-accessories {
-    padding: 20px;
-    border-radius: 20px;
-    background-color: #F5F5F7;
-    text-align: center;
-    max-height: 170px;
-    min-height: 170px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    overflow: hidden;
+    padding: 10px;
+    margin: 10px 0;
+}
+.accessories-image {
+    flex-basis: 35%;
+    max-width: 100%;
+}
+.accessories-image a {
+    display: block;
+}
+.accessories-image a img {
+    max-width: 100%;
+    height: auto;
+    max-height: 115px;
+    object-fit: cover;
+    margin: 0 auto;
+}
+.accessories-text {
+    font-size: 20px;
+    color: #0F0F10;
+    flex-grow: 1;
+    overflow: hidden;
+}
+a.link.add_to_cart_button.ajax_add_to_cart {
+    font-size: 16px;
+    color: #475FB3;
+    padding: 3px 20px;
+    border: 0.8px solid #475FB3;
+    border-radius: 50px;
+    outline: none !important;
+}
+
+a.link.add_to_cart_button.ajax_add_to_cart:hover {
+    border: 0.8px solid #475FB3 !important;
+    background-color: #475FB3;
+    color: #fff;
+    outline: none !important;
+}
+button#view-all-products {
+    font-size: 16px;
+    color: #475FB3;
+    padding: 7px 30px;
+    border: 0.8px solid #475FB3;
+    border-radius: 50px;
+    outline: none !important;
+    margin-left: 20px;
+    background-color: transparent;
+}
+button#view-all-products:hover {
+    border: 0.8px solid #475FB3 !important;
+    background-color: #475FB3;
+    color: #fff;
+    outline: none !important;
 }
 .single-accessories > p {
     margin-bottom: 5px;
@@ -74,6 +125,9 @@
 }
 .whats-in-the-box-image-right{
     margin-top: 15px;
+}
+h4.price {
+    font-weight: 700;
 }
 .whats-in-the-box-image-right > p{}
 
@@ -104,11 +158,8 @@ h1.apps-screenshot-title {}
     .whats-in-the-box-image-left {
         min-height: 290px;
     }
-    .single-accessories {
-        padding: 3px;
-      }
-     .single-accessories > img {
-        max-width: 100px;
+    .accessories-text h4{
+        font-size: 16px !important;
     }
 }
 

@@ -151,3 +151,12 @@ jQuery(document).ready(function($) {
       });
     });
   });
+
+  document.getElementById('view-all-products').addEventListener('click', function() {
+    var items = document.querySelectorAll('.product-item');
+    items.forEach(function(item) {
+        item.style.display = 'block'; 
+    });
+    this.textContent = 'All Products Loaded'; 
+    
+});
