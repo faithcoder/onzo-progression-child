@@ -1,4 +1,3 @@
-
 jQuery(document).ready(function ($) {
     $('.tobor-nav-item').on('click', function (e) {
         e.preventDefault();
@@ -75,9 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     variationBtns.forEach(btn => {
         btn.addEventListener('click', function() {
-          
             variationBtns.forEach(b => b.classList.remove('active'));
-          
             this.classList.add('active');
             
             const variationData = JSON.parse(this.dataset.variation);
@@ -85,9 +82,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-   
     function updateProductDisplay(variationData) {
         document.querySelector('.tobor-product-title').innerHTML = variationData.title_html;
+        
         const description = variationData.description.replace(/<\/?p>/g, '');
         document.querySelector('#variation-description').innerHTML = description;
         document.querySelector('.variation_price').innerHTML = variationData.price_html;
@@ -97,8 +94,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if (affirmElement) {
             affirmElement.setAttribute('data-amount', variationData.display_price + '00');
         }
+        document.querySelector('.tobor-variation-name').innerHTML = variationData.model;
     }
-
 });
 
 

@@ -24,19 +24,19 @@
             <div class="col-lg-6 col-md-12">
                 <div class="row">
                     <div class="col-md-4 col-sm-4 col-4">
-                        <div class="single-accessories">
+                        <div class="single-accessories-box">
                             <p class="single-accessories-name"><?php the_field('quad_box_tools_label_one'); ?></p>
                             <img class="img-fluid" src="<?php the_field('quad_box_tools_image_one'); ?>" alt="Extra Foot Pads">
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-4 col-4">
-                        <div class="single-accessories">
+                        <div class="single-accessories-box">
                             <p class="single-accessories-name"><?php the_field('quad_box_tools_label_two'); ?></p>
                             <img class="img-fluid" src="<?php the_field('quad_box_tools_image_two'); ?>" alt="Extra Foot Pads">
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-4 col-4">
-                        <div class="single-accessories">
+                        <div class="single-accessories-box">
                             <p class="single-accessories-name"><?php the_field('quad_box_tools_label_three'); ?></p>
                             <img class="img-fluid" src="<?php the_field('quad_box_tools_image_three'); ?>" alt="Extra Foot Pads">
                         </div>
@@ -567,55 +567,8 @@
     </div>
 </div>
 
-<!-- Accessories Slider start -->
+<!-- Accessories start -->
 
-<div class="section-6 pb-5">
-    <div class="container">
-        <div class="mtb-50 d-flex align-items-center flex-wrap">
-            <h3 class="font_30 font800">Recommended Accessories</h3>
-            <button id="view-all-products">View All</button>
-        </div>
-        <div class="row" id="product-list">
-        <?php 
-        $args = array(
-            'post_type' => 'product',
-            'post_status' => 'publish',
-            'posts_per_page' => -1, 
-            'orderby' => 'rand',
-            'tax_query' => array( array(
-                'taxonomy' => 'product_cat',
-                'field' => 'slug', 
-                'terms' => 'home-dog',
-            )),
-        );
-        $loop = new WP_Query($args); 
-        if(!empty($loop)) {  
-            $count = 0; 
-            while ($loop->have_posts()) : $loop->the_post();
-                global $product; 
-                $product_id = get_the_ID();
-                $_product = wc_get_product($product_id);
-                $image = wp_get_attachment_image_src(get_post_thumbnail_id($product_id), 'single-post-thumbnail');
-                $pro_image = !empty($image) ? $image[0] : get_template_directory_uri() . '/assets/images/no-image-icon.png';
-                ?>
-                <div class="col-lg-4 product-item" style="<?php echo ($count >= 6) ? 'display: none;' : ''; ?>">
-                    <div class="single-accessories">
-                        <div class="accessories-image col-lg-6 col-md-6 col-sm-6 col-6">
-                            <a href="<?php echo get_permalink(); ?>"><img src="<?php echo esc_url($pro_image); ?>"></a>
-                        </div>
-                        <div class="accessories-text col-lg-6 col-md-6 col-sm-6 col-6">
-                            <a href="<?php echo get_permalink(); ?>"><h4><?php the_title(); ?></h4>
-                            <h4 class="price"><?php echo $_product->get_price_html(); ?></h4></a>
-                            <br>
-                            <a href="<?php echo esc_url($product->add_to_cart_url()); ?>" data-quantity="1" class="link add_to_cart_button ajax_add_to_cart">Add to Cart</a>
-                        </div>
-                    </div>
-                </div>
-                <?php 
-                $count++; 
-            endwhile; 
-        } ?>
-        </div>
-        
-    </div>
-</div>
+<?php 
+    echo do_shortcode('[recommended_accessories category="h1"]');
+?>

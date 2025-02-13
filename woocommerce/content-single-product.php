@@ -11,11 +11,9 @@ $variations = $product->is_type('variable') ? $product->get_available_variations
     <div id="single-product-info-background">
         <div class="container">
             <div class="productInformationWrapper row justify-content-between">
-                
                 <div class="tobor-product-badge">
                     <img src="https://toborlife.ai/dev/wp-content/uploads/2025/02/North-American-Distributor-Badge.png" alt="">
                 </div>
-                
                 <div class="ProductPicture col-lg-6 col-md-12">
                     <div id="single-product-info-background">
                         <div class="woocommerce woocommerce-shop-single">
@@ -24,35 +22,32 @@ $variations = $product->is_type('variable') ? $product->get_available_variations
                     </div>
                 </div>
                 <div class="productInformation col-lg-6 col-md-12 ps-2">
-                    
                     <?php if ($product->is_type('variable')): ?>
                         <?php 
                         foreach ($variations[0]['attributes'] as $attribute):
                             echo '<h2 class="tobor-product-title">' . esc_html($attribute) . '</h2>';
+
+                            $initial_model = get_post_meta($variations[0]['variation_id'], '_model', true);
+                            echo '<h4 class="tobor-variation-name">' . esc_html($initial_model) . '</h4>';
                         endforeach;
                         ?>
                     <?php else: ?>
                         <h2 class="tobor-product-title"><?php echo $product->get_name(); ?></h2>
+                        <h4 class="tobor-variation-name"><?php the_field('product_model'); ?></h4>
                     <?php endif; ?>
-                    
-                    <h4 class="tobor-variation-name"><?php the_field('product_model'); ?></h4>
-                    
-                    <?php echo '<p class="tobor-variation-description" id="variation-description">' . $product->get_description() . '</p>'; ?>
 
+                    <p class="tobor-variation-description" id="variation-description"><?php echo $product->get_description(); ?></p>
+                    
                     <?php if ($product->is_type('variable')): ?>
-                        <div class="variation-buttons-wrapper mb-1">
+                        <div class="variation-buttons-wrapper mb-4">
                             <div class="variation-grid">
                                 <?php 
-                                $default_variation = $variations[0];
-                                $default_price_html = wc_get_product($default_variation['variation_id'])->get_price_html();
                                 foreach ($variations as $index => $variation) {
                                     $model = get_post_meta($variation['variation_id'], '_model', true);
                                     $title_html = '';
                                     foreach ($variation['attributes'] as $attribute) {
                                         $title_html .= esc_html($attribute);
                                     }
-                                    $title_html .= esc_html($model);
-
                                     $variation_data = htmlspecialchars(json_encode([
                                         'description'   => $variation['variation_description'],
                                         'price_html'    => $variation['price_html'],
@@ -63,9 +58,9 @@ $variations = $product->is_type('variable') ? $product->get_available_variations
                                     ]), ENT_QUOTES, 'UTF-8');
                                     $active_class = ($index === 0) ? 'active' : '';
                                     ?>
-                                    <button class="variation-selector-btn <?= strtolower(str_replace(' ','-',$attribute)) ?> <?php echo $active_class; ?>" 
+                                    <button class="variation-selector-btn <?php echo $active_class; ?>" 
                                         data-variation='<?php echo $variation_data; ?>'>
-                                        <?php echo $attribute; ?>
+                                        <?php echo $title_html; ?>
                                     </button>
                                 <?php } ?>
                             </div>
@@ -81,7 +76,7 @@ $variations = $product->is_type('variable') ? $product->get_available_variations
                                 <h3 class="variation_price">
                                     <?php 
                                     if ($product->is_type('variable')) {
-                                        echo $default_price_html;
+                                        echo $variations[0]['price_html'];
                                     } else {
                                         echo $product->get_price_html();
                                     }
@@ -93,7 +88,7 @@ $variations = $product->is_type('variable') ? $product->get_available_variations
                                     data-affirm-color="blue" 
                                     data-learnmore-show="true" 
                                     data-page-type="product" 
-                                    data-amount="<?php echo $product->is_type('variable') ? $default_variation['display_price'] : $product->get_price(); ?>00">
+                                    data-amount="<?php echo $product->is_type('variable') ? $variations[0]['display_price'] : $product->get_price(); ?>00">
                                     Starting at <span class="affirm-ala-price">$167</span>/mo or 0% APR with 
                                     <span class="__affirm-logo __affirm-logo-blue __ligature__affirm_full_logo__ __processed">Affirm</span>. 
                                     <a class="affirm-modal-trigger" href="javascript:void(0)">Check your purchasing power</a>
@@ -108,7 +103,7 @@ $variations = $product->is_type('variable') ? $product->get_available_variations
                                     <input type="hidden" name="add-to-cart" value="<?php echo absint($product->get_id()); ?>" />
                                     <input type="hidden" name="product_id" value="<?php echo absint($product->get_id()); ?>" />
                                     <?php if ($product->is_type('variable')): ?>
-                                        <input type="hidden" name="variation_id" class="variation_id" value="<?php echo $variation['variation_id']; ?>" />
+                                        <input type="hidden" name="variation_id" class="variation_id" value="<?php echo $variations[0]['variation_id']; ?>" />
                                     <?php endif; ?>
                                 </div>
                             </div>
@@ -129,6 +124,8 @@ $variations = $product->is_type('variable') ? $product->get_available_variations
     </div>
 </div>
 
+
+
 <?php
 $product_id = $product->get_id();
 $description_template = get_theme_file_path('/template-parts/product-descriptions/product-' . $product_id . '.php');
@@ -136,11 +133,19 @@ $description_template = get_theme_file_path('/template-parts/product-description
 if (file_exists($description_template)) {
     include $description_template;
 } else {
-    $default_template = get_theme_file_path('/template-parts/product-descriptions/default.php');
-    if (file_exists($default_template)) {
-        include $default_template;
+    $specific_product_ids = array('7281', '603'); 
+
+   
+    if (in_array($product_id, $specific_product_ids)) {
+        $default_template = get_theme_file_path('/template-parts/product-descriptions/default.php');
+        if (file_exists($default_template)) {
+            include $default_template;
+        } else {
+            echo $product->get_description();
+        }
     } else {
-        echo $product->get_description();
+       
+        echo $product->get_description(); 
     }
 }
 ?>

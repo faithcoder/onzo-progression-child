@@ -1,92 +1,4 @@
-<div class="whats-in-the-box-wrapper">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="whats-in-the-box-text">
-                    <h1 class="text-center"><?php the_field('whats_in_the_box_title'); ?></h1>
-                    <div class="whats-in-the-box-list">
-                        <!--<ul>-->
-                        <!--    <li>Home Robot Dog (Unitree GO2) with extra foot pads, and stand</li>-->
-                        <!--    <li>Beautiful luggage case to transport dog with handle and wheels</li>-->
-                        <!--    <li>Battery charger, pocket-sized remote control* (plus & ultra only)</li>-->
-                        <!--    <li>Android/IOS App for robot control, programming, photo/video, tutorial videos, reference guide, and much more</li>-->
-                        <!--</ul>-->
-                        <?php the_field('whats_in_the_box_description'); ?>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-6 col-md-12 col-sm-12">
-                <div class="whats-in-the-box-image-left">
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-6">
-                        <img class="img-fluid" src="<?php the_field('box_dual_image_one'); ?>" alt="Extra Foot Pads">
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-6">
-                        <img class="img-fluid" src="<?php the_field('box_dual_image_two'); ?>" alt="Extra Foot Pads">
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-12">
-                <div class="row">
-                    <div class="col-md-4 col-sm-4 col-4">
-                        <div class="single-accessories">
-                            <p class="single-accessories-name"><?php the_field('quad_box_tools_label_one'); ?></p>
-                            <img class="img-fluid" src="<?php the_field('quad_box_tools_image_one'); ?>" alt="Extra Foot Pads">
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-4 col-4">
-                        <div class="single-accessories">
-                            <p class="single-accessories-name"><?php the_field('quad_box_tools_label_two'); ?></p>
-                            <img class="img-fluid" src="<?php the_field('quad_box_tools_image_two'); ?>" alt="Extra Foot Pads">
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-4 col-4">
-                        <div class="single-accessories">
-                            <p class="single-accessories-name"><?php the_field('quad_box_tools_label_three'); ?></p>
-                            <img class="img-fluid" src="<?php the_field('quad_box_tools_image_three'); ?>" alt="Extra Foot Pads">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="whats-in-the-box-image-right">
-                            <p class="single-accessories-name"><?php the_field('quad_box_tools_label_four'); ?></p>
-                            <img class="img-fluid" src="<?php the_field('quad_box_tools_image_four'); ?>" alt="Extra Foot Pads">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="apps-screenshot-area">
-        <div class="row">  
-            <div class="col-lg-12">
-                <h3 class="apps-screenshot-title text-center"><?php the_field('app_screen_title'); ?></h3>
-            </div>
-            <div class="col-lg-4">
-                    <div class="single-apps-screen">
-                        <img class="img-fluid" src="<?php the_field('app_screen_image_one'); ?>" alt="Extra Foot Pads">
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="single-apps-screen">
-                        <img class="img-fluid" src="<?php the_field('app_screen_image_two'); ?>" alt="Extra Foot Pads">
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="single-apps-screen">
-                        <img class="img-fluid" src="<?php the_field('app_screen_image_three'); ?>" alt="Extra Foot Pads">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
-
-    <!---------------------WHAT YOU GET PANEL NEW END------------------------------>
-
- 
 <div class="interaction-section section-2" id="features">
     <div class="container">
         <div class="row text-left mtb-50">
@@ -146,9 +58,10 @@
         </div>
         <div class="row mtb-80">
             <div class="col-md-6 cust-order-md-1 p-relative">
-                <div class="video-section width-87">
-                    <video class="border-r-25" playsinline="" loop="loop" autoplay="autoplay" muted="muted"
-                        src="<?php the_field('enhanced_section_4_left_video_link'); ?>"></video>
+                <div class="width100 width-100">
+                    <img class="width-100"
+                        src="<?php if(!get_field("enhanced_section_2_left_image")) { echo 'https://toborlife.ai/wp-content/uploads/2024/05/two.png'; } else { the_field('enhanced_section_2_left_image'); } ?>"
+                        alt="">
                 </div>
             </div>
             <div class="col-md-6 cust-order-md-2">
@@ -471,7 +384,7 @@
 
         </div>
         <br>
-        <p class="mt-2">*Voice function includes offline voice interaction, commands, intercom and music play.</p>
+        
     </div>
 
 </div>
@@ -539,7 +452,7 @@
             <div class="col-md-6 cust-order-md-1">
                 <div class="width100">
                     <img class="border-r-25"
-                        src="<?php if(!get_field("4_left_image")) { echo 'https://toborlife.ai/wp-content/uploads/2024/05/second.jpg'; } else { the_field('experience_section-4_left_image'); } ?>"
+                        src="<?php the_field('experience_section-4_left_image'); ?>"
                         alt="">
                 </div>
             </div>
@@ -569,6 +482,53 @@
 
 <!-- Accessories Slider start -->
 
-<?php 
-    echo do_shortcode('[recommended_accessories category="home-dog"]');
-?>
+<div class="section-6 pb-5">
+    <div class="container">
+        <div class="mtb-50 d-flex align-items-center flex-wrap">
+            <h3 class="font_30 font800">Recommended Accessories</h3>
+            <button id="view-all-products">View All</button>
+        </div>
+        <div class="row" id="product-list">
+        <?php 
+        $args = array(
+            'post_type' => 'product',
+            'post_status' => 'publish',
+            'posts_per_page' => -1, 
+            'orderby' => 'rand',
+            'tax_query' => array( array(
+                'taxonomy' => 'product_cat',
+                'field' => 'slug', 
+                'terms' => 'home-dog',
+            )),
+        );
+        $loop = new WP_Query($args); 
+        if(!empty($loop)) {  
+            $count = 0; 
+            while ($loop->have_posts()) : $loop->the_post();
+                global $product; 
+                $product_id = get_the_ID();
+                $_product = wc_get_product($product_id);
+                $image = wp_get_attachment_image_src(get_post_thumbnail_id($product_id), 'single-post-thumbnail');
+                $pro_image = !empty($image) ? $image[0] : get_template_directory_uri() . '/assets/images/no-image-icon.png';
+                ?>
+                <div class="col-lg-4 product-item" style="<?php echo ($count >= 6) ? 'display: none;' : ''; ?>">
+                    <div class="single-accessories">
+                        <div class="accessories-image col-lg-6 col-md-6 col-sm-6 col-6">
+                            <a href="<?php echo get_permalink(); ?>"><img src="<?php echo esc_url($pro_image); ?>"></a>
+                        </div>
+                        <div class="accessories-text col-lg-6 col-md-6 col-sm-6 col-6">
+                            <a href="<?php echo get_permalink(); ?>"><h4><?php the_title(); ?></h4>
+                            <h4 class="price"><?php echo $_product->get_price_html(); ?></h4></a>
+                            <br>
+                            <a href="<?php echo esc_url($product->add_to_cart_url()); ?>" data-quantity="1" class="link add_to_cart_button ajax_add_to_cart">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <?php 
+                $count++; 
+            endwhile; 
+        } ?>
+        </div>
+        
+    </div>
+</div>
